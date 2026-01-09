@@ -1,0 +1,63 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.python-version
+
+# Build/packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing/coverage
+.pytest_cache/
+.coverage*
+htmlcov/
+.tox/
+.nox/
+
+# Linters/type checkers
+.mypy_cache/
+.ruff_cache/
+.pylint.d/
+.pyre/
+
+# App/data artifacts
+logs/
+*.log
+.cache/
+.ipynb_checkpoints/
+
+# Project-specific
+checkpoints/
+checkpoints/*.pth
+Model1/
+runs/
+outputs/
+
+# Large model files (safety)
+*.pth
+
+# Datasets (optional - uncomment if you keep local data here)
+# data/
+# datasets/
+
+# Streamlit cache
+.streamlit/
+
+# Images generated during runs (optional)
+# samples/
