@@ -1,6 +1,7 @@
 import os
 import io
 import torch
+import torch.nn.functional as F
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from PIL import Image
@@ -19,17 +20,31 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def load_model(checkpoint_path: str):
     """Load model with caching."""
-    if checkpoint_path in model_cache:
-        return model_cache[checkpoint_path]
+    # Normalize checkpoint path to handle relative paths consistently
+    if not checkpoint_path:
+        checkpoint_path = None
+    elif not os.path.isabs(checkpoint_path):
+        checkpoint_path = os.path.abspath(os.path.normpath(checkpoint_path))
+    else:
+        checkpoint_path = os.path.normpath(checkpoint_path)
+    
+    # Use normalized path as cache key
+    cache_key = checkpoint_path if checkpoint_path else "default"
+    
+    if cache_key in model_cache:
+        return model_cache[cache_key]
     
     model = TinyUNet(in_channels=1, out_channels=2, base_c=32)
     if checkpoint_path and os.path.isfile(checkpoint_path):
-        ckpt = torch.load(checkpoint_path, map_location=device)
-        state = ckpt.get("model_state", ckpt)
-        model.load_state_dict(state, strict=False)
+        try:
+            ckpt = torch.load(checkpoint_path, map_location=device)
+            state = ckpt.get("model_state", ckpt)
+            model.load_state_dict(state, strict=False)
+        except Exception as e:
+            print(f"Warning: Failed to load checkpoint {checkpoint_path}: {e}")
     model.to(device)
     model.eval()
-    model_cache[checkpoint_path] = model
+    model_cache[cache_key] = model
     return model
 
 
@@ -67,27 +82,66 @@ def colorize():
         
         # Get parameters
         checkpoint_path = request.form.get('checkpoint', 'checkpoints/model_epoch_20.pth')
-        image_size = int(request.form.get('image_size', 256))
+        try:
+            image_size = int(request.form.get('image_size', 256))
+            if image_size <= 0 or image_size > 2048:
+                return jsonify({'error': 'image_size must be between 1 and 2048'}), 400
+        except ValueError:
+            return jsonify({'error': 'Invalid image_size parameter'}), 400
         
         # Load and process image
-        img = Image.open(io.BytesIO(file.read())).convert("RGB")
+        # Read file content into bytes buffer
+        file_content = file.read()
+        if len(file_content) == 0:
+            return jsonify({'error': 'Empty file provided'}), 400
+        
+        try:
+            img = Image.open(io.BytesIO(file_content)).convert("RGB")
+        except Exception as e:
+            return jsonify({'error': f'Invalid image file: {str(e)}'}), 400
+        
+        # Store original size for upscaling
+        original_size = img.size  # (width, height)
         
         # Load model
         model = load_model(checkpoint_path)
         
-        # Colorize
+        # Colorize at model input size
         L = pil_to_L(img, image_size).to(device)
         with torch.no_grad():
             pred_ab = model(L)
+        
+        # Upscale AB channels to original image size using bilinear interpolation
+        if original_size != (image_size, image_size):
+            # Upscale pred_ab using bilinear interpolation
+            pred_ab_upscaled = F.interpolate(
+                pred_ab, 
+                size=(original_size[1], original_size[0]),  # (height, width)
+                mode='bilinear', 
+                align_corners=False
+            )
+            
+            # Get original L channel at full resolution
+            img_np = np.array(img)
+            bgr = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
+            lab_orig = cv2.cvtColor(bgr, cv2.COLOR_BGR2LAB).astype(np.float32)
+            L_orig = lab_orig[:, :, 0:1] / 255.0
+            L_orig_t = torch.from_numpy(L_orig.transpose(2, 0, 1)).unsqueeze(0).float().to(device)
+            
+            # Combine original L with upscaled AB
+            rgb = lab_to_rgb_tensor(L_orig_t, pred_ab_upscaled).clamp(0, 1)
+        else:
+            # No upscaling needed
             rgb = lab_to_rgb_tensor(L, pred_ab).clamp(0, 1)
         
         # Convert to PIL image
         rgb_np = (rgb[0].cpu().numpy().transpose(1, 2, 0) * 255.0).astype(np.uint8)
-        out_img = Image.fromarray(rgb_np)
+        # Ensure RGB mode explicitly
+        out_img = Image.fromarray(rgb_np, mode='RGB')
         
-        # Save to bytes
+        # Save to bytes with no compression to preserve quality
         buf = io.BytesIO()
-        out_img.save(buf, format="PNG")
+        out_img.save(buf, format="PNG", optimize=False, compress_level=0)
         buf.seek(0)
         
         return send_file(buf, mimetype='image/png')

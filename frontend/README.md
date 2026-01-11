@@ -1,4 +1,4 @@
-# Image Colorizer Frontend
+# Clorizer Frontend
 
 React frontend for the Simple Colorizer application.
 

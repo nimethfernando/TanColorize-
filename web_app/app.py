@@ -1,6 +1,7 @@
 import os
 import io
 import torch
+import torch.nn.functional as F
 import streamlit as st
 from PIL import Image
 import numpy as np
@@ -48,6 +49,7 @@ def main():
     uploaded = st.file_uploader("Upload image", type=["jpg", "jpeg", "png", "bmp", "tif", "tiff"]) 
     if uploaded is not None:
         img = Image.open(uploaded).convert("RGB")
+        original_size = img.size  # (width, height)
         col1, col2 = st.columns(2)
         with col1:
             st.subheader("Original")
@@ -57,9 +59,33 @@ def main():
             L = pil_to_L(img, image_size).to(device)
             with torch.no_grad():
                 pred_ab = model(L)
+            
+            # Upscale AB channels to original image size using bilinear interpolation
+            if original_size != (image_size, image_size):
+                # Upscale pred_ab using bilinear interpolation
+                pred_ab_upscaled = F.interpolate(
+                    pred_ab, 
+                    size=(original_size[1], original_size[0]),  # (height, width)
+                    mode='bilinear', 
+                    align_corners=False
+                )
+                
+                # Get original L channel at full resolution
+                img_np = np.array(img)
+                bgr = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
+                lab_orig = cv2.cvtColor(bgr, cv2.COLOR_BGR2LAB).astype(np.float32)
+                L_orig = lab_orig[:, :, 0:1] / 255.0
+                L_orig_t = torch.from_numpy(L_orig.transpose(2, 0, 1)).unsqueeze(0).float().to(device)
+                
+                # Combine original L with upscaled AB
+                rgb = lab_to_rgb_tensor(L_orig_t, pred_ab_upscaled).clamp(0, 1)
+            else:
+                # No upscaling needed
                 rgb = lab_to_rgb_tensor(L, pred_ab).clamp(0, 1)
+            
             rgb_np = (rgb[0].cpu().numpy().transpose(1, 2, 0) * 255.0).astype(np.uint8)
-            out_img = Image.fromarray(rgb_np)
+            # Ensure RGB mode explicitly
+            out_img = Image.fromarray(rgb_np, mode='RGB')
 
         with col2:
             st.subheader("Colorized")
@@ -80,7 +106,7 @@ def main():
             })
 
         buf = io.BytesIO()
-        out_img.save(buf, format="PNG")
+        out_img.save(buf, format="PNG", optimize=False, compress_level=0)
         st.download_button("Download", data=buf.getvalue(), file_name="colorized.png", mime="image/png")
 
 
