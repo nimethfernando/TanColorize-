@@ -93,3 +93,32 @@
   margin-top: 10px;
   font-weight: bold;
 }
+
+.user-info {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-email {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 8px;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #555;
+}
