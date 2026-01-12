@@ -1,63 +1,34 @@
-# OS / Editor
+# User specific ignores
+checkpoints/
+model1/
+
+# Python defaults
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyTorch & Model files
+*.pth
+*.pt
+*.onnx
+*.t7
+weights/
+
+# BasicSR / Project specific common outputs
+experiments/
+results/
+tb_logger/
+debug/
+*.log
+
+# Mac/OS specific
 .DS_Store
 Thumbs.db
-*.swp
-*.swo
-.vscode/
-.idea/
-
-# Python cache/bytecode
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
-.venv/
-venv/
-env/
-.python-version
-
-# Build/packaging
-build/
-dist/
-*.egg-info/
-.eggs/
-
-# Testing/coverage
-.pytest_cache/
-.coverage*
-htmlcov/
-.tox/
-.nox/
-
-# Linters/type checkers
-.mypy_cache/
-.ruff_cache/
-.pylint.d/
-.pyre/
-
-# App/data artifacts
-logs/
-*.log
-.cache/
-.ipynb_checkpoints/
-
-# Project-specific
-checkpoints/
-checkpoints/*.pth
-Model1/
-runs/
-outputs/
-
-# Large model files (safety)
-*.pth
-
-# Datasets (optional - uncomment if you keep local data here)
-# data/
-# datasets/
-
-# Streamlit cache
-.streamlit/
-
-# Images generated during runs (optional)
-# samples/

@@ -2,183 +2,224 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = "http://localhost:8000";
 
 function App() {
-  const [originalImage, setOriginalImage] = useState(null);
-  const [originalFile, setOriginalFile] = useState(null);
-  const [colorizedImage, setColorizedImage] = useState(null);
+  // State
+  const [modelPath, setModelPath] = useState("");
+  const [inputSize, setInputSize] = useState(512);
+  const [modelLoaded, setModelLoaded] = useState(false);
+  const [mode, setMode] = useState("single"); // 'single' or 'folder'
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [imageSize, setImageSize] = useState(256);
-  const [checkpoint, setCheckpoint] = useState('checkpoints/model_epoch_20.pth');
+  const [statusMsg, setStatusMsg] = useState("");
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setOriginalFile(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setOriginalImage(reader.result);
-        setColorizedImage(null);
-        setError(null);
-      };
-      reader.readAsDataURL(file);
+  // Single Image State
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [originalPreview, setOriginalPreview] = useState(null);
+  const [colorizedImage, setColorizedImage] = useState(null);
+
+  // Folder State
+  const [inputFolder, setInputFolder] = useState("");
+  const [outputFolder, setOutputFolder] = useState("");
+
+  // Helper: Open File Dialog on Server
+  const handleBrowse = async (type, setter) => {
+    try {
+      const res = await axios.get(`${API_URL}/browse?type=${type}`);
+      if (res.data.path) setter(res.data.path);
+    } catch (err) {
+      console.error(err);
+      alert("Error opening file dialog");
     }
   };
 
-  const handleColorize = async () => {
-    if (!originalFile) {
-      setError('Please upload an image first');
-      return;
-    }
-
+  // Helper: Load Model
+  const loadModel = async () => {
+    if (!modelPath) return alert("Please select a model file first");
     setLoading(true);
-    setError(null);
-
+    setStatusMsg("Loading model...");
     try {
-      // Create form data with the actual file
-      const formData = new FormData();
-      formData.append('image', originalFile);
-      formData.append('image_size', imageSize.toString());
-      formData.append('checkpoint', checkpoint);
-
-      // Call API
-      const apiResponse = await axios.post(`${API_URL}/api/colorize`, formData, {
-        responseType: 'blob',
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+      const res = await axios.post(`${API_URL}/load-model`, {
+        path: modelPath,
+        input_size: inputSize
       });
-
-      // Convert blob to data URL
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setColorizedImage(reader.result);
-        setLoading(false);
-      };
-      reader.readAsDataURL(apiResponse.data);
+      setModelLoaded(true);
+      setStatusMsg(res.data.message);
     } catch (err) {
-      let errorMessage = 'Failed to colorize image';
-      
-      if (err.code === 'ECONNREFUSED' || err.message.includes('Network Error')) {
-        errorMessage = 'Cannot connect to API server. Make sure the Flask API is running on http://localhost:5000';
-      } else if (err.response) {
-        // Try to parse error message from response
-        if (err.response.data instanceof Blob) {
-          errorMessage = `Server error: ${err.response.status} ${err.response.statusText}`;
-        } else {
-          errorMessage = err.response.data?.error || `Server error: ${err.response.status}`;
-        }
-      } else {
-        errorMessage = err.message || errorMessage;
-      }
-      
-      setError(errorMessage);
+      setStatusMsg("Error loading model: " + err.message);
+    } finally {
       setLoading(false);
     }
   };
 
-  const handleDownload = () => {
-    if (colorizedImage) {
-      const link = document.createElement('a');
-      link.href = colorizedImage;
-      link.download = 'colorized.png';
-      link.click();
+  // Helper: Process Single Image
+  const processSingleImage = async () => {
+    if (!selectedFile) return;
+    if (!modelLoaded) return alert("Load model first!");
+    
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+
+    try {
+      const res = await axios.post(`${API_URL}/colorize-image`, formData);
+      // Convert hex string back to image for display
+      const hex = res.data.image_data;
+      const bytes = new Uint8Array(hex.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
+      const blob = new Blob([bytes], { type: "image/png" });
+      setColorizedImage(URL.createObjectURL(blob));
+    } catch (err) {
+      alert("Error processing image");
+    } finally {
+      setLoading(false);
     }
   };
 
+  // Helper: Process Folder
+  const processFolder = async () => {
+    if (!inputFolder || !outputFolder) return alert("Select both folders");
+    if (!modelLoaded) return alert("Load model first!");
+
+    setLoading(true);
+    setStatusMsg("Processing folder... check console/server logs for details.");
+    try {
+      const res = await axios.post(`${API_URL}/process-folder`, {
+        input_folder: inputFolder,
+        output_folder: outputFolder
+      });
+      setStatusMsg(`Success! Processed ${res.data.processed_count} images to ${res.data.output_folder}`);
+    } catch (err) {
+      setStatusMsg("Error processing folder");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Helper: Handle file input change
+  const onFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    setOriginalPreview(URL.createObjectURL(file));
+    setColorizedImage(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>🎨 Image Colorizer</h1>
-        <p className="subtitle">Transform grayscale images into vibrant color</p>
-      </header>
-
-      <main className="App-main">
-        <div className="controls">
-          <div className="control-group">
-            <label htmlFor="image-upload" className="upload-button">
-              📁 Upload Image
-            </label>
-            <input
-              id="image-upload"
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              style={{ display: 'none' }}
-            />
+    <div className="app-container">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <h2>Model Settings</h2>
+        
+        <div className="control-group">
+          <label>Model Path</label>
+          <div className="file-input-group">
+            <input type="text" value={modelPath} readOnly placeholder="Select .pth file" />
+            <button onClick={() => handleBrowse('file', setModelPath)}>Browse</button>
           </div>
-
-          <div className="control-group">
-            <label htmlFor="image-size">Image Size: {imageSize}px</label>
-            <input
-              id="image-size"
-              type="range"
-              min="128"
-              max="512"
-              step="64"
-              value={imageSize}
-              onChange={(e) => setImageSize(parseInt(e.target.value))}
-            />
-          </div>
-
-          <div className="control-group">
-            <label htmlFor="checkpoint">Checkpoint Path:</label>
-            <input
-              id="checkpoint"
-              type="text"
-              value={checkpoint}
-              onChange={(e) => setCheckpoint(e.target.value)}
-              placeholder="checkpoints/model_epoch_20.pth"
-            />
-          </div>
-
-          <button
-            className="colorize-button"
-            onClick={handleColorize}
-            disabled={!originalImage || loading}
-          >
-            {loading ? '⏳ Colorizing...' : '✨ Colorize Image'}
-          </button>
         </div>
 
-        {error && (
-          <div className="error-message">
-            ⚠️ {error}
+        <div className="control-group">
+          <label>Input Size: {inputSize}</label>
+          <input 
+            type="range" min="256" max="1024" step="64" 
+            value={inputSize} 
+            onChange={(e) => setInputSize(parseInt(e.target.value))} 
+          />
+        </div>
+
+        <button 
+          className="primary-btn" 
+          onClick={loadModel} 
+          disabled={loading || !modelPath}
+        >
+          {loading ? "Loading..." : "Load Model"}
+        </button>
+        
+        <p className="status-text">{statusMsg}</p>
+
+        <hr />
+        <h3>Mode</h3>
+        <div className="radio-group">
+          <label>
+            <input 
+              type="radio" checked={mode === 'single'} 
+              onChange={() => setMode('single')} 
+            /> Single Image
+          </label>
+          <label>
+            <input 
+              type="radio" checked={mode === 'folder'} 
+              onChange={() => setMode('folder')} 
+            /> Folder Process
+          </label>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="main-content">
+        <h1>🎨 Tancolorize</h1>
+        
+        {mode === 'single' ? (
+          <div className="single-mode">
+            <div className="upload-section">
+              <input type="file" onChange={onFileChange} accept="image/*" />
+              <button 
+                className="action-btn"
+                onClick={processSingleImage} 
+                disabled={!selectedFile || !modelLoaded || loading}
+              >
+                {loading ? "Processing..." : "Colorize Image"}
+              </button>
+            </div>
+
+            <div className="image-preview-container">
+              <div className="img-box">
+                <h4>Original</h4>
+                {originalPreview && <img src={originalPreview} alt="Original" />}
+              </div>
+              <div className="img-box">
+                <h4>Colorized</h4>
+                {colorizedImage ? (
+                  <img src={colorizedImage} alt="Result" />
+                ) : (
+                  <div className="placeholder">Result will appear here</div>
+                )}
+              </div>
+            </div>
+            
+            {colorizedImage && (
+              <a href={colorizedImage} download="colorized.png" className="download-btn">
+                Download Result
+              </a>
+            )}
+          </div>
+        ) : (
+          <div className="folder-mode">
+            <div className="control-group">
+              <label>Input Folder</label>
+              <div className="file-input-group">
+                <input type="text" value={inputFolder} readOnly />
+                <button onClick={() => handleBrowse('folder', setInputFolder)}>Select Input</button>
+              </div>
+            </div>
+            
+            <div className="control-group">
+              <label>Output Folder</label>
+              <div className="file-input-group">
+                <input type="text" value={outputFolder} readOnly />
+                <button onClick={() => handleBrowse('folder', setOutputFolder)}>Select Output</button>
+              </div>
+            </div>
+
+            <button 
+              className="action-btn"
+              onClick={processFolder}
+              disabled={!inputFolder || !outputFolder || !modelLoaded || loading}
+            >
+              {loading ? "Processing..." : "Process All Images"}
+            </button>
           </div>
         )}
-
-        <div className="image-container">
-          <div className="image-box">
-            <h3>Original Image</h3>
-            {originalImage ? (
-              <img src={originalImage} alt="Original" className="preview-image" />
-            ) : (
-              <div className="placeholder">No image uploaded</div>
-            )}
-          </div>
-
-          <div className="image-box">
-            <h3>Colorized Image</h3>
-            {loading ? (
-              <div className="loading-spinner">
-                <div className="spinner"></div>
-                <p>Processing...</p>
-              </div>
-            ) : colorizedImage ? (
-              <>
-                <img src={colorizedImage} alt="Colorized" className="preview-image" />
-                <button className="download-button" onClick={handleDownload}>
-                  💾 Download
-                </button>
-              </>
-            ) : (
-              <div className="placeholder">Colorized result will appear here</div>
-            )}
-          </div>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }

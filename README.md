@@ -1,55 +1,46 @@
+## 🔧 About the Project
 
-# Simple Colorizer
+This project explores advanced neural network techniques to transform grayscale images into vibrant, colorized versions. We use supervised training with a curated dataset of human-centric images, focusing particularly on tan skin tone representation (TanVis dataset).
 
-A minimal grayscale-to-color training and inference pipeline.
+The primary goals of this project are:
+- Enhance skin tone accuracy in grayscale-to-color transformations  
+- Minimize color bleeding and artifact generation  
+- Develop a robust and generalizable colorization model
 
-## Install
+---
 
-```
-python -m venv .venv
-.venv\\Scripts\\activate  # Windows
-pip install -r simple_colorizer/requirements.txt
-```
+## 🚀 Getting Started
 
-## Prepare data
-- Put your RGB training images under a folder, e.g. `D:/data/train_rgb/`
-- (Optional) Validation images under `D:/data/val_rgb/`
+To run this application locally, you will need to set up both the Python backend and the React frontend.
 
-## Train
-```
-python simple_colorizer/train.py --train_dir D:/data/train_rgb --val_dir D:/data/val_rgb --save_dir simple_colorizer/checkpoints --image_size 256 --batch_size 8 --epochs 20
-```
+### Prerequisites
+* **Python 3.9+**
+* **Node.js & npm** (Download from [nodejs.org](https://nodejs.org/))
 
-This trains a tiny U-Net to predict AB from L in LAB space.
+### 1. Clone the Repository
 
-## Inference Apps
-
-### Streamlit App
-```
-python -m streamlit run web_app\app.py --server.port 8501 --server.headless true
-```
-
-- In the sidebar, set your checkpoint path (e.g., `checkpoints/model_epoch_20.pth`).
-- Upload an image and view the colorized result.
-
-### React Frontend with Flask API
-
-1. **Start the Flask API backend:**
 ```bash
-python api.py
-```
-The API will run on `http://localhost:5000`
+git clone 
 
-2. **Start the React frontend:**
-```bash
+# Create and activate a virtual environment (optional but recommended)
+python -m venv venv
+
+# Windows:
+.\venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies (including FastAPI and Uvicorn)
+pip install -r requirements.txt
+pip install fastapi uvicorn python-multipart opencv-python torch torchvision basicsr
+
+# Setup front end
 cd frontend
 npm install
+
+# Start the Backend Server
+uvicorn server:app --reload
+
+# Start the React Frontend
+cd frontend
 npm start
-```
-The React app will open at `http://localhost:3000`
-
-- Upload an image using the web interface
-- Adjust image size and checkpoint path as needed
-- Click "Colorize Image" to process
-- Download the colorized result
-
