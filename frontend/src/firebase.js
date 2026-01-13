@@ -4,12 +4,12 @@ import { getAuth } from 'firebase/auth';
 // Your web app's Firebase configuration
 // Replace these values with your Firebase project config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBcAvucZxa9VnTHCTCkjiYS5Ry6yC2dOtk",
+  authDomain: "tancolorize.firebaseapp.com",
+  projectId: "tancolorize",
+  storageBucket: "tancolorize.firebasestorage.app",
+  messagingSenderId: "506662312452",
+  appId: "1:506662312452:web:18a73ba25f9f24b5547351"
 };
 
 // Initialize Firebase
