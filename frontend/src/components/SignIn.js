@@ -8,6 +8,7 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -20,7 +21,13 @@ export default function SignIn() {
       await login(email, password);
       navigate('/');
     } catch (err) {
-      setError('Failed to sign in: ' + err.message);
+      const code = err?.code || '';
+      const friendly = (code === 'auth/invalid-credential' || code === 'auth/user-not-found' || code === 'auth/wrong-password')
+        ? 'Email or password is incorrect.'
+        : (code === 'auth/invalid-email')
+          ? 'Please enter a valid email address.'
+          : 'Unable to sign in right now.';
+      setError(friendly);
     } finally {
       setLoading(false);
     }
@@ -44,13 +51,22 @@ export default function SignIn() {
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password"
-            />
+            <div className="password-field">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Enter your password"
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
           </div>
           <button type="submit" disabled={loading} className="auth-button">
             {loading ? 'Signing In...' : 'Sign In'}

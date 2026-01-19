@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import '../App.css';
 
@@ -119,8 +120,17 @@ export default function ColorizeApp() {
       {/* Sidebar */}
       <div className="sidebar">
         <div className="user-info">
-          <div className="user-email">{currentUser?.email}</div>
-          <button onClick={handleLogout} className="logout-btn">Logout</button>
+          <div className="user-email">
+            {currentUser ? currentUser.email : 'Guest user'}
+          </div>
+          {currentUser ? (
+            <button onClick={handleLogout} className="logout-btn">Logout</button>
+          ) : (
+            <div className="auth-actions">
+              <Link to="/signin" className="logout-btn">Sign In</Link>
+              <Link to="/signup" className="logout-btn">Sign Up</Link>
+            </div>
+          )}
         </div>
         
         <h2>Model Settings</h2>

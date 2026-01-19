@@ -9,6 +9,8 @@ export default function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const { signup } = useAuth();
   const navigate = useNavigate();
 
@@ -29,7 +31,13 @@ export default function SignUp() {
       await signup(email, password);
       navigate('/');
     } catch (err) {
-      setError('Failed to create account: ' + err.message);
+      const code = err?.code || '';
+      const friendly = (code === 'auth/email-already-in-use')
+        ? 'An account already exists with this email.'
+        : (code === 'auth/invalid-email')
+          ? 'Please enter a valid email address.'
+          : 'Unable to create the account right now.';
+      setError(friendly);
     } finally {
       setLoading(false);
     }
@@ -53,23 +61,41 @@ export default function SignUp() {
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password (min 6 characters)"
-            />
+            <div className="password-field">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Enter your password (min 6 characters)"
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
           </div>
           <div className="form-group">
             <label>Confirm Password</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              placeholder="Confirm your password"
-            />
+            <div className="password-field">
+              <input
+                type={showConfirm ? 'text' : 'password'}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                placeholder="Confirm your password"
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={() => setShowConfirm((prev) => !prev)}
+              >
+                {showConfirm ? 'Hide' : 'Show'}
+              </button>
+            </div>
           </div>
           <button type="submit" disabled={loading} className="auth-button">
             {loading ? 'Creating Account...' : 'Sign Up'}

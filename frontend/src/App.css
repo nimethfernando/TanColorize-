@@ -122,3 +122,14 @@
 .logout-btn:hover {
   background: #555;
 }
+
+.auth-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-actions .logout-btn {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+}
