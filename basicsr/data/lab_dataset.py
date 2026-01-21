@@ -72,7 +72,7 @@ class LabDataset(data.Dataset):
             finally:
                 retry -= 1
         img_gt = imfrombytes(img_bytes, float32=True)
-        img_gt = cv2.resize(img_gt, (gt_size, gt_size))  # TODO: 直接resize是否是最佳方案？
+        img_gt = cv2.resize(img_gt, (gt_size, gt_size))  # TODO: Is direct resizing the best solution?
         
         # -------------------------------- (Optional) CutMix & FMix -------------------------------- #
         if self.do_fmix and np.random.uniform(0., 1., size=1)[0] > self.fmix_p:
@@ -135,25 +135,25 @@ class LabDataset(data.Dataset):
 
 
 def rand_bbox(size, lam):
-    '''cutmix 的 bbox 截取函数
+    '''Bbox cropping function for CutMix
     Args:
-        size : tuple 图片尺寸 e.g (256,256)
-        lam  : float 截取比例
+        size : tuple Image size e.g (256,256)
+        lam  : float Cropping ratio
     Returns:
-        bbox 的左上角和右下角坐标
+        Coordinates of the top-left and bottom-right corners of the bbox
         int,int,int,int
     '''
-    W = size[0]  # 截取图片的宽度
-    H = size[1]  # 截取图片的高度
-    cut_rat = np.sqrt(1. - lam)  # 需要截取的 bbox 比例
-    cut_w = np.int(W * cut_rat)  # 需要截取的 bbox 宽度
-    cut_h = np.int(H * cut_rat)  # 需要截取的 bbox 高度
+    W = size[0]  # Width of the cropped image
+    H = size[1]  # Height of the cropped image
+    cut_rat = np.sqrt(1. - lam)  # Proportion of the bbox to be cropped
+    cut_w = np.int(W * cut_rat)  # Width of the bbox to be cropped
+    cut_h = np.int(H * cut_rat)  # Height of the bbox to be cropped
 
-    cx = np.random.randint(W)  # 均匀分布采样，随机选择截取的 bbox 的中心点 x 坐标
-    cy = np.random.randint(H)  # 均匀分布采样，随机选择截取的 bbox 的中心点 y 坐标
+    cx = np.random.randint(W)  # Uniform sampling, randomly select center x coordinate of the bbox
+    cy = np.random.randint(H)  # Uniform sampling, randomly select center y coordinate of the bbox
 
-    bbx1 = np.clip(cx - cut_w // 2, 0, W)  # 左上角 x 坐标
-    bby1 = np.clip(cy - cut_h // 2, 0, H)  # 左上角 y 坐标
-    bbx2 = np.clip(cx + cut_w // 2, 0, W)  # 右下角 x 坐标
-    bby2 = np.clip(cy + cut_h // 2, 0, H)  # 右下角 y 坐标
+    bbx1 = np.clip(cx - cut_w // 2, 0, W)  # Top-left x coordinate
+    bby1 = np.clip(cy - cut_h // 2, 0, H)  # Top-left y coordinate
+    bbx2 = np.clip(cx + cut_w // 2, 0, W)  # Bottom-right x coordinate
+    bby2 = np.clip(cy + cut_h // 2, 0, H)  # Bottom-right y coordinate
     return bbx1, bby1, bbx2, bby2
