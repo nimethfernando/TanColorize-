@@ -7,6 +7,11 @@ from .metrics import *
 from .models import *
 # from .ops import *
 # from .test import *
-from .train import *
+# Note: train.py is a script, not meant to be imported
+# from .train import *
 from .utils import *
-from .version import __gitsha__, __version__
+try:
+    from .version import __gitsha__, __version__
+except ImportError:
+    __gitsha__ = None
+    __version__ = None

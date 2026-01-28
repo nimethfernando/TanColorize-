@@ -11,8 +11,8 @@ datasets:
   train:
     name: CustomNet
     type: LabDataset
-    dataroot_gt: "C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\SkinTan"
-    meta_info_file: ["C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\SkinTan"]
+    dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/SkinTan"
+    meta_info_file: ["C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/SkinTan"]
     phase: train
     io_backend:
       type: disk
@@ -39,8 +39,8 @@ datasets:
   val:
     name: CustomNet
     type: LabDataset
-    dataroot_gt: "C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation"
-    meta_info_file: ['C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation']
+    dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/Datase_Validation"
+    meta_info_file: ['C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/Datase_Validation']
     phase: val
     gt_size: 256
     io_backend:
@@ -62,7 +62,7 @@ datasets:
 
 # network structures
 network_g:
-  type: Colorfy
+  type: TanColorize
   encoder_name: convnext-l
   encoder_from_pretrain: True
   decoder_name: MultiScaleColorDecoder
