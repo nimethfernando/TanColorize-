@@ -11,8 +11,8 @@ datasets:
   train:
     name: CustomNet
     type: LabDataset
-    dataroot_gt: ""C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\SkinTan""
-    # meta_info_file: ["C:\\Users\\oshen geenath\\Desktop\\code\\colorfy\\basicsr\\dataset_train.txt"]
+    dataroot_gt: "C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\SkinTan"
+    meta_info_file: ["C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\SkinTan"]
     phase: train
     io_backend:
       type: disk
@@ -39,8 +39,8 @@ datasets:
   val:
     name: CustomNet
     type: LabDataset
-    dataroot_gt: ""C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation""
-    # meta_info_file: ['C:\\Users\\oshen geenath\\Desktop\\code\\colorfy\\basicsr\\dataset_validation.txt']
+    dataroot_gt: "C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation"
+    meta_info_file: ['C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation']
     phase: val
     gt_size: 256
     io_backend:
@@ -80,7 +80,7 @@ network_d:
 
 # path
 path:
-  pretrain_network_g: 'C:\\Users\\oshen geenath\\Desktop\\code\\colorfy\\models\\ddcolor_paper.pth'
+  pretrain_network_g: ~
   strict_load_g: False
   resume_state: ~
 

@@ -9,7 +9,7 @@ from basicsr.utils.registry import ARCH_REGISTRY
 
 
 @ARCH_REGISTRY.register()
-class Colorfy(nn.Module):
+class TanColorize(nn.Module):
 
     def __init__(self,
                  encoder_name='convnext-l',
