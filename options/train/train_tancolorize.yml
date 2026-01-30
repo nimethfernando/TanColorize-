@@ -12,7 +12,7 @@ datasets:
     name: CustomNet
     type: LabDataset
     dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/SkinTan"
-    meta_info_file: ["C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/SkinTan"]
+    meta_info_file: meta_train.txt
     phase: train
     io_backend:
       type: disk
@@ -40,7 +40,7 @@ datasets:
     name: CustomNet
     type: LabDataset
     dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/Datase_Validation"
-    meta_info_file: ['C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/Datase_Validation']
+    meta_info_file: meta_val.txt
     phase: val
     gt_size: 256
     io_backend:

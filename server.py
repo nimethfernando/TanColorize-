@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 # Import your architecture (Ensure you run this script from the project root)
-from basicsr.archs.colorfy_arch import Colorfy
+from basicsr.archs.tancolorize_arch import TanColorize
 
 app = FastAPI()
 
@@ -82,7 +82,7 @@ class ImageColorizer:
         config = {
             "encoder_name": "convnext-l",
             "decoder_name": "MultiScaleColorDecoder",
-            "input_size": [self.input_size, self.input_size],
+            "input_size": (self.input_size, self.input_size),
             "num_output_channels": 2,
             "last_norm": "Spectral",
             "do_normalize": False,
@@ -91,7 +91,7 @@ class ImageColorizer:
             "dec_layers": 9,
         }
         
-        model = Colorfy(**config)
+        model = TanColorize(**config)
         state_dict = torch.load(model_path, map_location=self.device)
         if "params" in state_dict:
             state_dict = state_dict["params"]

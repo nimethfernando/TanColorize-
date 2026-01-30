@@ -76,6 +76,39 @@ class MLP(nn.Module):
             x = F.relu(layer(x)) if i < self.num_layers - 1 else layer(x)
         return x
 
+class FFNLayer(nn.Module):
+    def __init__(self, d_model, dim_feedforward=2048, dropout=0.1, activation="relu", normalize_before=False):
+        super().__init__()
+        self.linear1 = nn.Linear(d_model, dim_feedforward)
+        self.dropout = nn.Dropout(dropout)
+        self.linear2 = nn.Linear(dim_feedforward, d_model)
+        self.norm = nn.LayerNorm(d_model)
+        self.dropout1 = nn.Dropout(dropout)
+        self.dropout2 = nn.Dropout(dropout)
+
+        self.activation = _get_activation_fn(activation)
+        self.normalize_before = normalize_before
+
+    def forward(self, tgt):
+        if self.normalize_before:
+            tgt = self.norm(tgt)
+        
+        tgt2 = self.linear2(self.dropout(self.activation(self.linear1(tgt))))
+        tgt = tgt + self.dropout2(tgt2)
+        
+        if not self.normalize_before:
+            tgt = self.norm(tgt)
+        return tgt
+
+def _get_activation_fn(activation):
+    """Return an activation function given a string"""
+    if activation == "relu":
+        return F.relu
+    if activation == "gelu":
+        return F.gelu
+    if activation == "glu":
+        return F.glu
+    raise RuntimeError(f"activation should be relu/gelu, not {activation}.")
 
 # Re-export Transformer from transformer.py for convenience
 from .transformer import Transformer
