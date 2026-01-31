@@ -37,6 +37,8 @@ class ColorModel(BaseModel):
 
         if self.is_train:
             self.init_training_settings()
+            self.use_amp = self.opt['train'].get('use_amp', False)
+            self.scaler = torch.amp.GradScaler('cuda', enabled=self.use_amp)
 
     def init_training_settings(self):
         train_opt = self.opt['train']
@@ -143,56 +145,63 @@ class ColorModel(BaseModel):
             p.requires_grad = False
         self.optimizer_g.zero_grad()
         
-        self.output_ab = self.net_g(self.lq_rgb)
+        with torch.amp.autocast('cuda', enabled=self.use_amp):
+            self.output_ab = self.net_g(self.lq_rgb)
+        
+        # Color space conversion often needs float precision
         self.output_lab = torch.cat([self.lq, self.output_ab], dim=1)
         self.output_rgb = tensor_lab2rgb(self.output_lab)
 
-        l_g_total = 0
-        loss_dict = OrderedDict()
-        # pixel loss
-        if self.cri_pix:
-            l_g_pix = self.cri_pix(self.output_ab, self.gt)
-            l_g_total += l_g_pix
-            loss_dict['l_g_pix'] = l_g_pix
+        with torch.amp.autocast('cuda', enabled=self.use_amp):
+            l_g_total = 0
+            loss_dict = OrderedDict()
+            # pixel loss
+            if self.cri_pix:
+                l_g_pix = self.cri_pix(self.output_ab, self.gt)
+                l_g_total += l_g_pix
+                loss_dict['l_g_pix'] = l_g_pix
 
-        # perceptual loss
-        if self.cri_perceptual:
-            l_g_percep, l_g_style = self.cri_perceptual(self.output_rgb, self.gt_rgb)
-            if l_g_percep is not None:
-                l_g_total += l_g_percep
-                loss_dict['l_g_percep'] = l_g_percep
-            if l_g_style is not None:
-                l_g_total += l_g_style
-                loss_dict['l_g_style'] = l_g_style
-        # gan loss
-        if self.cri_gan:
-            fake_g_pred = self.net_d(self.output_rgb)
-            l_g_gan = self.cri_gan(fake_g_pred, target_is_real=True, is_disc=False)
-            l_g_total += l_g_gan
-            loss_dict['l_g_gan'] = l_g_gan
-        # colorfulness loss
-        if self.cri_colorfulness:
-            l_g_color = self.cri_colorfulness(self.output_rgb)
-            l_g_total += l_g_color
-            loss_dict['l_g_color'] = l_g_color
+            # perceptual loss
+            if self.cri_perceptual:
+                l_g_percep, l_g_style = self.cri_perceptual(self.output_rgb, self.gt_rgb)
+                if l_g_percep is not None:
+                    l_g_total += l_g_percep
+                    loss_dict['l_g_percep'] = l_g_percep
+                if l_g_style is not None:
+                    l_g_total += l_g_style
+                    loss_dict['l_g_style'] = l_g_style
+            # gan loss
+            if self.cri_gan:
+                fake_g_pred = self.net_d(self.output_rgb)
+                l_g_gan = self.cri_gan(fake_g_pred, target_is_real=True, is_disc=False)
+                l_g_total += l_g_gan
+                loss_dict['l_g_gan'] = l_g_gan
+            # colorfulness loss
+            if self.cri_colorfulness:
+                l_g_color = self.cri_colorfulness(self.output_rgb)
+                l_g_total += l_g_color
+                loss_dict['l_g_color'] = l_g_color
 
-        l_g_total.backward()
-        self.optimizer_g.step()
+        self.scaler.scale(l_g_total).backward()
+        self.scaler.step(self.optimizer_g)
 
         # optimize net_d
         for p in self.net_d.parameters():
             p.requires_grad = True
         self.optimizer_d.zero_grad()
 
-        real_d_pred = self.net_d(self.gt_rgb)
-        fake_d_pred = self.net_d(self.output_rgb.detach())
-        l_d = self.cri_gan(real_d_pred, target_is_real=True, is_disc=True) + self.cri_gan(fake_d_pred, target_is_real=False, is_disc=True)
+        with torch.amp.autocast('cuda', enabled=self.use_amp):
+            real_d_pred = self.net_d(self.gt_rgb)
+            fake_d_pred = self.net_d(self.output_rgb.detach())
+            l_d = self.cri_gan(real_d_pred, target_is_real=True, is_disc=True) + self.cri_gan(fake_d_pred, target_is_real=False, is_disc=True)
+        
         loss_dict['l_d'] = l_d
         loss_dict['real_score'] = real_d_pred.detach().mean()
         loss_dict['fake_score'] = fake_d_pred.detach().mean()
 
-        l_d.backward()
-        self.optimizer_d.step()
+        self.scaler.scale(l_d).backward()
+        self.scaler.step(self.optimizer_d)
+        self.scaler.update()
 
         self.log_dict = self.reduce_loss_dict(loss_dict)
 

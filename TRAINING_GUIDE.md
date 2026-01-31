@@ -2,10 +2,9 @@
 
 ## Setup
 
-1. **Set PYTHONPATH** (required for imports to work):
-   ```powershell
-   $env:PYTHONPATH="C:\Users\nimet\Documents\IIT\L6\FYP\IPD\TanColorize-"
-   ```
+1. **Prerequisites**:
+   - Ensure the virtual environment is set up and activated (or reference the python executable directly).
+   - Ensure NVIDIA GPU is available (RTX 3050 confirmed).
 
 2. **Verify dataset paths** in `options/train/train_tancolorize.yml`:
    - Training dataset: `C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\SkinTan`
@@ -13,10 +12,11 @@
 
 ## Training Command
 
+Use the following command to start training. It sets the `PYTHONPATH` and uses the virtual environment's Python to ensure all dependencies (including CUDA/GPU support) are loaded correctly.
+
 ```powershell
-cd C:\Users\nimet\Documents\IIT\L6\FYP\IPD\TanColorize-
 $env:PYTHONPATH="C:\Users\nimet\Documents\IIT\L6\FYP\IPD\TanColorize-"
-python basicsr/train.py -opt options/train/train_tancolorize.yml
+.\venv\Scripts\python.exe basicsr/train.py -opt options/train/train_tancolorize.yml
 ```
 
 ## Training Configuration
@@ -41,7 +41,6 @@ Training outputs will be saved to:
 
 To resume from a checkpoint:
 ```powershell
-python basicsr/train.py -opt options/train/train_tancolorize.yml --auto_resume
+$env:PYTHONPATH="C:\Users\nimet\Documents\IIT\L6\FYP\IPD\TanColorize-"
+.\venv\Scripts\python.exe basicsr/train.py -opt options/train/train_tancolorize.yml --auto_resume
 ```
-
-Or specify a specific checkpoint in the YAML file under `path.resume_state`.

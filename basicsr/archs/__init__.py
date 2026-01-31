@@ -1,6 +1,7 @@
 # Import all architectures to register them
 from .tancolorize_arch import TanColorize
 from .vgg_arch import VGGFeatureExtractor
+from .discriminator_arch import DynamicUNetDiscriminator
 
 from basicsr.utils.registry import ARCH_REGISTRY
 

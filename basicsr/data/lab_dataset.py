@@ -1,3 +1,4 @@
+import os
 import cv2
 import random
 import time
@@ -53,7 +54,7 @@ class LabDataset(data.Dataset):
 
         # -------------------------------- Load gt images -------------------------------- #
         # Shape: (h, w, c); channel order: BGR; image range: [0, 1], float32.
-        gt_path = self.paths[index]
+        gt_path = os.path.join(self.gt_folder, self.paths[index])
         gt_size = self.opt['gt_size']
         # avoid errors caused by high latency in reading files
         retry = 3

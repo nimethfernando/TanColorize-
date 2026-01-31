@@ -198,6 +198,7 @@ def tensor_lab2rgb(labs, illuminant="D65", observer="2"):
     rgb_from_xyz = np.array([[3.240481340, -0.96925495, 0.055646640], [-1.53715152, 1.875990000, -0.20404134],
                              [-0.49853633, 0.041555930, 1.057311070]])
     B, C, H, W = labs.shape
+    labs = labs.float()
     arrs = labs.permute((0, 2, 3, 1)).contiguous()  # (B, 3, H, W) -> (B, H, W, 3)
     L, a, b = arrs[:, :, :, 0:1], arrs[:, :, :, 1:2], arrs[:, :, :, 2:]
     y = (L + 16.) / 116.
@@ -217,9 +218,9 @@ def tensor_lab2rgb(labs, illuminant="D65", observer="2"):
     rgb_trans = torch.mm(mask_xyz.view(-1, 3), torch.from_numpy(rgb_from_xyz).type_as(xyz)).view(B, H, W, C)
     rgb = rgb_trans.permute((0, 3, 1, 2)).contiguous()
     mask = rgb.data > 0.0031308
-    mask_rgb = rgb.clone()
-    mask_rgb[mask] = 1.055 * torch.pow(rgb[mask], 1 / 2.4) - 0.055
-    mask_rgb[~mask] = rgb[~mask] * 12.92
+    mask_rgb = rgb.clone().float()
+    mask_rgb[mask] = 1.055 * torch.pow(rgb[mask].float(), 1 / 2.4) - 0.055
+    mask_rgb[~mask] = rgb[~mask].float() * 12.92
     neg_mask = mask_rgb.data < 0
     large_mask = mask_rgb.data > 1
     mask_rgb[neg_mask] = 0
