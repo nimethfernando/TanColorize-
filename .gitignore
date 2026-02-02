@@ -1,6 +1,8 @@
 # User specific ignores
 checkpoints/
 model1/
+experiments/
+pretrain/
 
 # Python defaults
 __pycache__/
@@ -23,11 +25,12 @@ pip-delete-this-directory.txt
 weights/
 
 # BasicSR / Project specific common outputs
-experiments/
 results/
 tb_logger/
 debug/
 *.log
+meta_*.txt
+*.safetensors
 
 # Mac/OS specific
 .DS_Store

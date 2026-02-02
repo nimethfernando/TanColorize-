@@ -1,10 +1,9 @@
 # general settings
-name: TanColorize_v1
+name: TanColorize_FastSprint
 model_type: ColorModel
 scale: 1
 num_gpu: 1
 manual_seed: 0
-queue_size: 64
 
 # dataset and data loader settings
 datasets:
@@ -16,26 +15,17 @@ datasets:
     phase: train
     io_backend:
       type: disk
-
-    gt_size: 256
-
-    # augmentation config
-    use_hflip: True
-    use_rot: False
-
-    # cutmix / fmix
-    do_cutmix: False
-    cutmix_p: 0.5
-    do_fmix: False
-    fmix_p: 0.5
-
-    # data loader
+    gt_size: 128
+    batch_size_per_gpu: 32
+    num_worker_per_gpu: 8
     use_shuffle: true
-    num_worker_per_gpu: 4
-    batch_size_per_gpu: 4
-    dataset_enlarge_ratio: 1
-    prefetch_mode: cuda
-    pin_memory: true
+    # Mandatory augmentation flags to fix KeyError
+    use_hflip: true
+    use_rot: false
+    do_cutmix: false
+    cutmix_p: 0.5
+    do_fmix: false
+    fmix_p: 0.5
 
   val:
     name: CustomNet
@@ -43,90 +33,78 @@ datasets:
     dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/Datase_Validation"
     meta_info_file: meta_val.txt
     phase: val
-    gt_size: 256
     io_backend:
       type: disk
-
-    # Add these parameters for validation dataset
-    use_hflip: False
-    use_rot: False
-    do_cutmix: False
-    cutmix_p: 0.5
-    do_fmix: False
-    fmix_p: 0.5
-
-    # data loader
-    use_shuffle: false
-    num_worker_per_gpu: 1
+    gt_size: 128 
     batch_size_per_gpu: 1
-    prefetch_mode: ~
+    use_shuffle: false
+    # Mandatory augmentation flags to fix KeyError
+    use_hflip: false
+    use_rot: false
+    do_cutmix: false
+    cutmix_p: 0.5
+    do_fmix: false
+    fmix_p: 0.5
 
 # network structures
 network_g:
   type: TanColorize
-  encoder_name: convnext-l
+  encoder_name: convnext-t 
   encoder_from_pretrain: True
-  decoder_name: MultiScaleColorDecoder
-  num_queries: 100
+  num_queries: 32
   num_scales: 3
-  dec_layers: 9
+  dec_layers: 2
   last_norm: Spectral
   num_output_channels: 2
-  do_normalize: False
+  decoder_name: MultiScaleColorDecoder
+  do_normalize: false
 
 network_d:
   type: DynamicUNetDiscriminator
-  nf: 64
+  nf: 16
   n_channels: 3
 
 # path
 path:
   pretrain_network_g: ~
-  strict_load_g: False
+  strict_load_g: false
   resume_state: ~
 
 # training settings
 train:
   use_amp: true
-  color_enhance: True
-  color_enhance_factor: 1.2
+  color_enhance: false
   optim_g:
     type: AdamW
-    lr: !!float 1e-5
+    lr: !!float 4e-4
     weight_decay: 0.01
     betas: [0.9, 0.99]
   optim_d:
     type: Adam
-    lr: !!float 1e-5
+    lr: !!float 4e-4
     weight_decay: 0
     betas: [0.9, 0.99]
 
+  total_iter: 5000
+  warmup_iter: -1
   scheduler:
     type: MultiStepLR
-    milestones: [80000, 120000, 160000, 200000, 240000, 280000, 320000, 360000]
+    milestones: [3000, 4500]
     gamma: 0.5
 
-  total_iter: 10000
-  #40000
-  warmup_iter: -1 # no warm up
-
-  # losses
+  # Speed-optimized Losses
   pixel_opt:
     type: L1Loss
-    loss_weight: 0.1
+    loss_weight: 1.0
     reduction: mean
   perceptual_opt:
     type: PerceptualLoss
     layer_weights:
-      "conv1_1": 0.0625
-      "conv2_1": 0.125
-      "conv3_1": 0.25
-      "conv4_1": 0.5
-      "conv5_1": 1.0
-    vgg_type: vgg16_bn
+      "conv5_4": 1.0
+    vgg_type: vgg19
     use_input_norm: true
     range_norm: false
-    perceptual_weight: 5.0
+    perceptual_weight: 1.0
     style_weight: 0
     criterion: l1
   gan_opt:
@@ -134,39 +112,21 @@ train:
     gan_type: vanilla
     real_label_val: 1.0
     fake_label_val: 0.0
-    loss_weight: 1.0
-  colorfulness_opt:
-    type: ColorfulnessLoss
-    loss_weight: 0.5
+    loss_weight: 0.05
 
 # validation settings
 val:
-  val_freq: !!float 1e4
-  save_img: False
-  pbar: True
-
+  val_freq: 2500
+  save_img: true
+  pbar: true
   metrics:
-    fid: # metric name, can be arbitrary
-      type: calculate_fid
-      better: lower
-    cf:
-      type: calculate_cf
-      better: higher
+    # fid:
+    #   type: calculate_fid
+    #   better: lower
 
 # logging settings
 logger:
   print_freq: 100
-  save_snapshot_freq: !!float 1e3
-  save_snapshot_verbose: True
-  save_checkpoint_freq: !!float 1e4
+  save_checkpoint_freq: 2500
   use_tb_logger: true
-  wandb:
-    project: ~
-    resume_id: ~
-
-# dist training settings
-dist_params:
-  backend: nccl
-  port: 29500
-
-find_unused_parameters: true
+  save_snapshot_freq: 1000
