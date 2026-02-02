@@ -1,210 +1,172 @@
 import os
-import sys
-import glob
 import cv2
 import torch
 import numpy as np
-import tempfile
-import subprocess
 import uvicorn
-from PIL import Image
-from io import BytesIO
+import shutil
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 
-# Import your architecture (Ensure you run this script from the project root)
+# TanColorize architecture
 from basicsr.archs.tancolorize_arch import TanColorize
 
+# -----------------------------------------------------------------------------
+# FastAPI app
+# -----------------------------------------------------------------------------
 app = FastAPI()
 
-# Enable CORS so React (port 3000) can talk to FastAPI (port 8000)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # tighten later if needed
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# --- Utilities from your original app.py ---
-
-def select_file_using_subprocess(is_folder=False):
-    """Opens a native system dialog on the server machine to select files/folders."""
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.txt')
-    temp_file.close()
-    
-    script_content = b"""
-import tkinter as tk
-from tkinter import filedialog
-import sys
-
-def select_path(output_file, is_folder):
-    root = tk.Tk()
-    root.withdraw()
-    root.wm_attributes('-topmost', 1)
-    
-    if is_folder:
-        path = filedialog.askdirectory(title="Select Folder")
-    else:
-        path = filedialog.askopenfilename(title="Select Model File", filetypes=(("PyTorch files", "*.pth"), ("All files", "*.*")))
-    
-    root.destroy()
-    with open(output_file, 'w') as f:
-        f.write(path)
-
-if __name__ == "__main__":
-    select_path(sys.argv[1], sys.argv[2].lower() == 'true')
-"""
-    script_file = tempfile.NamedTemporaryFile(delete=False, suffix='.py')
-    script_file.write(script_content)
-    script_file.close()
-    
-    try:
-        subprocess.run(["python", script_file.name, temp_file.name, str(is_folder)], check=True)
-        with open(temp_file.name, 'r') as f:
-            path = f.read().strip()
-        os.unlink(temp_file.name)
-        os.unlink(script_file.name)
-        return path
-    except Exception as e:
-        print(f"Error: {e}")
-        return None
-
+# -----------------------------------------------------------------------------
+# Image Colorizer
+# -----------------------------------------------------------------------------
 class ImageColorizer:
     def __init__(self):
-        self.model = None
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.input_size = 512
+        self.model = None
+        self.input_size = 128  # matches training gt_size
 
-    def load_model(self, model_path, input_size=512):
-        self.input_size = input_size
+    def load_model(self, model_path: str):
+        if not os.path.exists(model_path):
+            raise FileNotFoundError("Model file not found")
+
         config = {
-            "encoder_name": "convnext-l",
-            "decoder_name": "MultiScaleColorDecoder",
-            "input_size": (self.input_size, self.input_size),
-            "num_output_channels": 2,
-            "last_norm": "Spectral",
-            "do_normalize": False,
-            "num_queries": 100,
+            "encoder_name": "convnext-t",              # MUST match training
+            "encoder_from_pretrain": False,
+            "num_queries": 32,
             "num_scales": 3,
-            "dec_layers": 9,
+            "dec_layers": 2,
+            "num_output_channels": 2,
+            "decoder_name": "MultiScaleColorDecoder",
+            "last_norm": "Spectral",
+            "do_normalize": False
         }
-        
+
         model = TanColorize(**config)
+
         state_dict = torch.load(model_path, map_location=self.device)
         if "params" in state_dict:
             state_dict = state_dict["params"]
-            
-        model_dict = model.state_dict()
-        filtered_dict = {k: v for k, v in state_dict.items() if k in model_dict and v.shape == model_dict[k].shape}
-        
-        model.load_state_dict(filtered_dict, strict=False)
-        self.model = model.to(self.device)
-        self.model.eval()
-        return f"Model loaded: {len(filtered_dict)} layers"
+
+        missing, unexpected = model.load_state_dict(state_dict, strict=False)
+        if len(missing) > 0:
+            print("⚠ Missing keys:", missing[:10])
+        if len(unexpected) > 0:
+            print("⚠ Unexpected keys:", unexpected[:10])
+
+        model.to(self.device)
+        model.eval()
+
+        self.model = model
+        print("✅ Model loaded successfully")
 
     @torch.no_grad()
-    def colorize(self, img_array):
+    def colorize(self, img_bgr: np.ndarray) -> np.ndarray:
         if self.model is None:
-            raise ValueError("Model not loaded")
-            
-        if len(img_array.shape) == 2:
-            img_array = cv2.cvtColor(img_array, cv2.COLOR_GRAY2BGR)
-        elif img_array.shape[2] == 4:
-            img_array = cv2.cvtColor(img_array, cv2.COLOR_RGBA2BGR)
-            
-        height, width = img_array.shape[:2]
-        img_float = img_array.astype(np.float32) / 255.0
-        orig_l = cv2.cvtColor(img_float, cv2.COLOR_BGR2Lab)[:, :, :1]
-        
-        img_resized = cv2.resize(img_float, (self.input_size, self.input_size))
-        img_l = cv2.cvtColor(img_resized, cv2.COLOR_BGR2Lab)[:, :, :1]
-        img_lab = np.concatenate((img_l, np.zeros_like(img_l), np.zeros_like(img_l)), axis=-1)
-        img_rgb = cv2.cvtColor(img_lab, cv2.COLOR_LAB2RGB)
-        
-        tensor = torch.from_numpy(img_rgb.transpose((2, 0, 1))).float().unsqueeze(0).to(self.device)
-        output_ab = self.model(tensor).cpu()
-        
-        output_ab = torch.nn.functional.interpolate(output_ab, size=(height, width))[0].float().numpy().transpose(1, 2, 0)
-        output_lab = np.concatenate((orig_l, output_ab), axis=-1)
-        output_bgr = cv2.cvtColor(output_lab, cv2.COLOR_LAB2BGR)
-        
-        return (output_bgr * 255.0).round().astype(np.uint8)
+            raise RuntimeError("Model not loaded")
 
-# Initialize Global Colorizer
+        if img_bgr is None:
+            raise ValueError("Invalid image")
+
+        h, w = img_bgr.shape[:2]
+
+        img = img_bgr.astype(np.float32) / 255.0
+        lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+
+        l = lab[:, :, :1]  # original L
+        img_resized = cv2.resize(img, (self.input_size, self.input_size))
+        l_resized = cv2.cvtColor(img_resized, cv2.COLOR_BGR2LAB)[:, :, :1]
+
+        # Fake ab for model input (as used in TanColorize inference)
+        lab_fake = np.concatenate(
+            [l_resized, np.zeros_like(l_resized), np.zeros_like(l_resized)],
+            axis=-1
+        )
+        rgb_fake = cv2.cvtColor(lab_fake, cv2.COLOR_LAB2RGB)
+
+        tensor = torch.from_numpy(rgb_fake.transpose(2, 0, 1)) \
+                      .unsqueeze(0).float().to(self.device)
+
+        ab = self.model(tensor)
+        ab = torch.nn.functional.interpolate(
+            ab, size=(h, w), mode="bilinear", align_corners=False
+        )[0].cpu().numpy().transpose(1, 2, 0)
+
+        lab_out = np.concatenate([l, ab], axis=-1)
+        bgr_out = cv2.cvtColor(lab_out, cv2.COLOR_LAB2BGR)
+
+        return (bgr_out * 255).clip(0, 255).astype(np.uint8)
+
+# -----------------------------------------------------------------------------
+# Global instance (kept in memory)
+# -----------------------------------------------------------------------------
 colorizer = ImageColorizer()
 
-# --- API Endpoints ---
+MODEL_DIR = "models"
+os.makedirs(MODEL_DIR, exist_ok=True)
 
-class ModelConfig(BaseModel):
-    path: str
-    input_size: int
+# -----------------------------------------------------------------------------
+# API Endpoints
+# -----------------------------------------------------------------------------
+@app.get("/")
+def health():
+    return {
+        "status": "running",
+        "model_loaded": colorizer.model is not None,
+        "device": str(colorizer.device)
+    }
 
-class FolderConfig(BaseModel):
-    input_folder: str
-    output_folder: str
+@app.post("/upload-model")
+async def upload_model(file: UploadFile = File(...)):
+    if not file.filename.endswith(".pth"):
+        raise HTTPException(400, "Only .pth files allowed")
 
-@app.get("/browse")
-def browse_path(type: str):
-    # Opens dialog on the server machine
-    is_folder = (type == "folder")
-    path = select_file_using_subprocess(is_folder)
-    return {"path": path if path else ""}
+    model_path = os.path.join(MODEL_DIR, file.filename)
 
-@app.post("/load-model")
-def load_model_endpoint(config: ModelConfig):
+    with open(model_path, "wb") as f:
+        shutil.copyfileobj(file.file, f)
+
     try:
-        msg = colorizer.load_model(config.path, config.input_size)
-        return {"status": "success", "message": msg}
+        colorizer.load_model(model_path)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(500, f"Failed to load model: {str(e)}")
+
+    return {
+        "status": "success",
+        "message": "Model uploaded and loaded successfully"
+    }
 
 @app.post("/colorize-image")
 async def colorize_image(file: UploadFile = File(...)):
     if colorizer.model is None:
-        raise HTTPException(status_code=400, detail="Model not loaded")
-    
+        raise HTTPException(400, "No model loaded")
+
+    contents = await file.read()
+    nparr = np.frombuffer(contents, np.uint8)
+    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+    if img is None:
+        raise HTTPException(400, "Invalid image file")
+
     try:
-        contents = await file.read()
-        nparr = np.frombuffer(contents, np.uint8)
-        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        
-        output_bgr = colorizer.colorize(img)
-        
-        # Encode back to png to send to React
-        success, encoded_img = cv2.imencode('.png', output_bgr)
-        return {"image_data": encoded_img.tobytes().hex()}
+        output = colorizer.colorize(img)
+        success, encoded = cv2.imencode(".png", output)
+        if not success:
+            raise RuntimeError("Image encoding failed")
+
+        return {"image_data": encoded.tobytes().hex()}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(500, str(e))
 
-@app.post("/process-folder")
-def process_folder(config: FolderConfig):
-    if colorizer.model is None:
-        raise HTTPException(status_code=400, detail="Model not loaded")
-    
-    if not os.path.exists(config.input_folder):
-        raise HTTPException(status_code=404, detail="Input folder not found")
-        
-    os.makedirs(config.output_folder, exist_ok=True)
-    
-    image_extensions = ['*.jpg', '*.jpeg', '*.png', '*.bmp']
-    image_files = []
-    for ext in image_extensions:
-        image_files.extend(glob.glob(os.path.join(config.input_folder, ext)))
-    
-    count = 0
-    for img_path in image_files:
-        try:
-            img = cv2.imread(img_path)
-            output_bgr = colorizer.colorize(img)
-            save_path = os.path.join(config.output_folder, f"colorized_{os.path.basename(img_path)}")
-            cv2.imwrite(save_path, output_bgr)
-            count += 1
-        except Exception as e:
-            print(f"Skipped {img_path}: {e}")
-            
-    return {"status": "success", "processed_count": count, "output_folder": config.output_folder}
-
+# -----------------------------------------------------------------------------
+# Run (Render uses PORT env var)
+# -----------------------------------------------------------------------------
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
