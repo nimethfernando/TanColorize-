@@ -13,14 +13,13 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google.cloud import storage
-import os
 
-# Import your architecture (Ensure you run this script from the project root)
+# Import your architecture
 from basicsr.archs.tancolorize_arch import TanColorize
 
 app = FastAPI()
 
-# Enable CORS so React (port 3000) can talk to FastAPI (port 8000)
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -29,49 +28,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# --- Utilities from your original app.py ---
-
-def select_file_using_subprocess(is_folder=False):
-    """Opens a native system dialog on the server machine to select files/folders."""
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.txt')
-    temp_file.close()
+# --- NEW: Defined the download function ---
+def download_model_from_gcs(bucket_name, source_blob_name, destination_file_name):
+    """Downloads a model file from Google Cloud Storage."""
+    # This will automatically use the GOOGLE_APPLICATION_CREDENTIALS env var
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(source_blob_name)
     
-    script_content = b"""
-import tkinter as tk
-from tkinter import filedialog
-import sys
-
-def select_path(output_file, is_folder):
-    root = tk.Tk()
-    root.withdraw()
-    root.wm_attributes('-topmost', 1)
-    
-    if is_folder:
-        path = filedialog.askdirectory(title="Select Folder")
-    else:
-        path = filedialog.askopenfilename(title="Select Model File", filetypes=(("PyTorch files", "*.pth"), ("All files", "*.*")))
-    
-    root.destroy()
-    with open(output_file, 'w') as f:
-        f.write(path)
-
-if __name__ == "__main__":
-    select_path(sys.argv[1], sys.argv[2].lower() == 'true')
-"""
-    script_file = tempfile.NamedTemporaryFile(delete=False, suffix='.py')
-    script_file.write(script_content)
-    script_file.close()
-    
-    try:
-        subprocess.run(["python", script_file.name, temp_file.name, str(is_folder)], check=True)
-        with open(temp_file.name, 'r') as f:
-            path = f.read().strip()
-        os.unlink(temp_file.name)
-        os.unlink(script_file.name)
-        return path
-    except Exception as e:
-        print(f"Error: {e}")
-        return None
+    print(f"Downloading model {source_blob_name} from bucket {bucket_name}...")
+    blob.download_to_filename(destination_file_name)
+    print("Download complete.")
 
 class ImageColorizer:
     def __init__(self):
@@ -137,30 +104,22 @@ class ImageColorizer:
 # Initialize Global Colorizer
 colorizer = ImageColorizer()
 
-# --- API Endpoints ---
+import requests
 
-class ModelConfig(BaseModel):
-    path: str
-    input_size: int
-
-class FolderConfig(BaseModel):
-    input_folder: str
-    output_folder: str
-
-@app.get("/browse")
-def browse_path(type: str):
-    # Opens dialog on the server machine
-    is_folder = (type == "folder")
-    path = select_file_using_subprocess(is_folder)
-    return {"path": path if path else ""}
-
-@app.post("/load-model")
-def load_model_endpoint(config: ModelConfig):
-    try:
-        msg = colorizer.load_model(config.path, config.input_size)
-        return {"status": "success", "message": msg}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+def download_model_simple():
+    url = "https://storage.googleapis.com/tancorize/np.pth"
+    destination = "model.pth"
+    
+    if not os.path.exists(destination):
+        print(f"Downloading model from {url}...")
+        response = requests.get(url, stream=True)
+        if response.status_code == 200:
+            with open(destination, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            print("Download complete.")
+        else:
+            print(f"Failed to download model. Status code: {response.status_code}")
 
 @app.post("/colorize-image")
 async def colorize_image(file: UploadFile = File(...)):
@@ -173,64 +132,12 @@ async def colorize_image(file: UploadFile = File(...)):
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         
         output_bgr = colorizer.colorize(img)
-        
-        # Encode back to png to send to React
         success, encoded_img = cv2.imencode('.png', output_bgr)
         return {"image_data": encoded_img.tobytes().hex()}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# --- Updated Configuration ---
-BUCKET_NAME = "tancorize"  # Extracted from your link
-MODEL_BLOB_NAME = "np.pth" # Extracted from your link
-LOCAL_MODEL_PATH = "model.pth"
-
-# 1. Download from GCS on startup if it doesn't exist
-if not os.path.exists(LOCAL_MODEL_PATH):
-    try:
-        download_model_from_gcs(BUCKET_NAME, MODEL_BLOB_NAME, LOCAL_MODEL_PATH)
-    except Exception as e:
-        print(f"Error downloading from GCS: {e}")
-
-# 2. AUTOMATICALLY LOAD THE MODEL
-# This ensures colorizer.model is not None when the user uploads an image
-try:
-    if os.path.exists(LOCAL_MODEL_PATH):
-        # We use 512 as that is the default input_size in your ImageColorizer
-        load_msg = colorizer.load_model(LOCAL_MODEL_PATH, input_size=512)
-        print(f"Successfully auto-loaded: {load_msg}")
-    else:
-        print("Warning: model.pth not found. Automated colorization will fail until loaded.")
-except Exception as e:
-    print(f"Failed to initialize model on startup: {e}")
-
-@app.post("/process-folder")
-def process_folder(config: FolderConfig):
-    if colorizer.model is None:
-        raise HTTPException(status_code=400, detail="Model not loaded")
-    
-    if not os.path.exists(config.input_folder):
-        raise HTTPException(status_code=404, detail="Input folder not found")
-        
-    os.makedirs(config.output_folder, exist_ok=True)
-    
-    image_extensions = ['*.jpg', '*.jpeg', '*.png', '*.bmp']
-    image_files = []
-    for ext in image_extensions:
-        image_files.extend(glob.glob(os.path.join(config.input_folder, ext)))
-    
-    count = 0
-    for img_path in image_files:
-        try:
-            img = cv2.imread(img_path)
-            output_bgr = colorizer.colorize(img)
-            save_path = os.path.join(config.output_folder, f"colorized_{os.path.basename(img_path)}")
-            cv2.imwrite(save_path, output_bgr)
-            count += 1
-        except Exception as e:
-            print(f"Skipped {img_path}: {e}")
-            
-    return {"status": "success", "processed_count": count, "output_folder": config.output_folder}
-
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Use environment variable for port if available (standard for Render/Heroku)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
