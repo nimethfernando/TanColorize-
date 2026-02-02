@@ -106,20 +106,33 @@ colorizer = ImageColorizer()
 
 import requests
 
+import os
+import requests
+# ... other imports ...
+
+# 1. Define the download function FIRST
 def download_model_simple():
     url = "https://storage.googleapis.com/tancorize/np.pth"
     destination = "model.pth"
     
     if not os.path.exists(destination):
         print(f"Downloading model from {url}...")
-        response = requests.get(url, stream=True)
-        if response.status_code == 200:
+        try:
+            response = requests.get(url, stream=True)
+            response.raise_for_status() # Check for errors
             with open(destination, 'wb') as f:
                 for chunk in response.iter_content(chunk_size=8192):
                     f.write(chunk)
             print("Download complete.")
-        else:
-            print(f"Failed to download model. Status code: {response.status_code}")
+        except Exception as e:
+            print(f"Failed to download model: {e}")
+
+# 2. Call the function BEFORE the model tries to load
+download_model_simple()
+
+# 3. Now initialize your colorizer
+LOCAL_MODEL_PATH = "model.pth"
+# ... rest of your code ...
 
 @app.post("/colorize-image")
 async def colorize_image(file: UploadFile = File(...)):
