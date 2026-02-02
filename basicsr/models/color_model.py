@@ -250,3 +250,13 @@ def save_training_images(self, current_iter):
         img_res = tensor2img(visuals['result'][0])
         img_concat = np.concatenate((img_lq, img_gt, img_res), axis=1)
         imwrite(img_concat, save_img_path)
+
+@master_only
+def save(self, epoch, current_iter):
+        """Save networks and training state during training."""
+        # Save the Generator
+        self.save_network(self.net_g, 'net_g', current_iter)
+        # Save the Discriminator
+        self.save_network(self.net_d, 'net_d', current_iter)
+        # Save training state (optimizers/schedulers) to allow resume
+        self.save_training_state(epoch, current_iter)
