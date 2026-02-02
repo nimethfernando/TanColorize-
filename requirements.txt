@@ -9,3 +9,4 @@ timm
 Pillow
 PyYAML
 scipy
+scikit-image
