@@ -10,3 +10,4 @@ Pillow
 PyYAML
 scipy
 scikit-image
+flask-cors
