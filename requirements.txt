@@ -11,3 +11,4 @@ PyYAML
 scipy
 scikit-image
 flask-cors
+google-cloud-storage
