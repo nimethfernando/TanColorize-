@@ -187,7 +187,8 @@ def train_pipeline(root_path):
             # save training images snapshot save_snapshot_freq
             if opt['logger'][
                     'save_snapshot_freq'] is not None and current_iter % opt['logger']['save_snapshot_freq'] == 0:
-                model.save_training_images(current_iter)
+                pass
+                # model.save_training_images(epoch, current_iter)
 
             # save models and training states
             if current_iter % opt['logger']['save_checkpoint_freq'] == 0:
