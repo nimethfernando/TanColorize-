@@ -108,25 +108,29 @@ import os
 from google.cloud import storage
 
 def download_model_from_gcs():
-    # The library will automatically look for the 
-    # GOOGLE_APPLICATION_CREDENTIALS environment variable
+    # This checks if Render has actually provided the key
+    key_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+    
+    if not key_path or not os.path.exists(key_path):
+        print(f"CRITICAL: Credential file not found at {key_path}")
+        return
+
     bucket_name = "tancorize"
     source_blob_name = "np.pth"
-    destination_file_name = "model.pth"
+    dest = "model.pth"
 
-    if not os.path.exists(destination_file_name):
+    if not os.path.exists(dest):
         try:
-            print(f"Authenticating to download {source_blob_name}...")
-            storage_client = storage.Client()
-            bucket = storage_client.bucket(bucket_name)
+            print(f"Authenticating with {key_path}...")
+            client = storage.Client()
+            bucket = client.bucket(bucket_name)
             blob = bucket.blob(source_blob_name)
-            
-            blob.download_to_filename(destination_file_name)
-            print("Download successful! Model weights are ready.")
+            blob.download_to_filename(dest)
+            print("Download successful! Model weights ready.")
         except Exception as e:
             print(f"Authentication download failed: {e}")
 
-# Call this at the very top of your script
+# Call this at the very beginning of your script
 download_model_from_gcs()
 
 @app.post("/colorize-image")
