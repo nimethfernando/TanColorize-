@@ -230,7 +230,7 @@ class ColorModel(BaseModel):
         metric_data = dict()
         pbar = tqdm(total=len(dataloader), unit='image') if use_pbar else None
         
-        if self.opt['val']['metrics'].get('fid') is not None:
+        if self.opt['val']['metrics'] is not None and self.opt['val']['metrics'].get('fid') is not None:
             fake_acts_set, acts
 
 def test(self):
