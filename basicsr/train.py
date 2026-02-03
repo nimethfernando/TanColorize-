@@ -9,6 +9,9 @@ warnings.filterwarnings("ignore")
 
 from os import path as osp
 
+# Explicitly import datasets to register them BEFORE trying to build
+import basicsr.data  # This triggers the registration of all datasets
+
 from basicsr.data import build_dataloader, build_dataset
 from basicsr.data.data_sampler import EnlargedSampler
 from basicsr.data.prefetch_dataloader import CPUPrefetcher, CUDAPrefetcher

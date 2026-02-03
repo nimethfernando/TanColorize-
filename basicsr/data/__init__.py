@@ -5,6 +5,13 @@ from basicsr.utils.registry import DATASET_REGISTRY
 from torch.utils.data import DataLoader
 import torch
 
+# Ensure LabDataset is exported
+__all__ = ['LabDataset', 'build_dataset', 'build_dataloader']
+
+# Debug: verify dataset was registered
+if 'LabDataset' not in DATASET_REGISTRY._obj_map:
+    raise ImportError("LabDataset failed to register! Check lab_dataset.py")
+
 
 def build_dataset(dataset_opt):
     """Build dataset from registry.
