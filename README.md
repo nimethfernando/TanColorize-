@@ -43,3 +43,17 @@ pip install fastapi uvicorn python-multipart opencv-python torch torchvision bas
 # Setup the frontend
 cd frontend
 npm install
+
+### 2. Training Guide
+Training is managed via basicsr/train.py using configuration files that define the network architecture and loss functions.
+Dataset Configuration
+Ensure your local dataset paths are correctly set in options/train/train_tancolorize.yml:
+
+Training Dataset: Path to your curated human-centric images (e.g., Dataset/SkinTan).
+
+Validation Dataset: Path to your validation set (e.g., Dataset/Dataset_Validation).
+
+```bash
+$env:PYTHONPATH="C:\Users\nimet\Documents\IIT\L6\FYP\IPD\TanColorize-"
+.\venv\Scripts\python.exe basicsr/train.py -opt options/train/train_tancolorize.yml
+```
