@@ -85,11 +85,11 @@ train:
     weight_decay: 0
     betas: [0.9, 0.99]
 
-  total_iter: 5000
+  total_iter: 10000
   warmup_iter: -1
   scheduler:
     type: MultiStepLR
-    milestones: [3000, 4500]
+    milestones: [3000, 5000]
     gamma: 0.5
 
   # Speed-optimized Losses
@@ -105,7 +105,7 @@ train:
     use_input_norm: true
     range_norm: false
     perceptual_weight: 1.0
-    style_weight: 0
+    style_weight: 1.0
     criterion: l1
   gan_opt:
     type: GANLoss

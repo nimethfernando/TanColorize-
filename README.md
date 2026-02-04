@@ -1,46 +1,45 @@
+# TanColorize 🎨
+
+TanColorize is an AI-powered image colorization system designed to transform grayscale images into vibrant, realistic versions. A primary focus of this project is addressing algorithmic bias by ensuring accurate representation of tan and darker skin tones using the **TanVis** dataset.
+
 ## 🔧 About the Project
 
-This project explores advanced neural network techniques to transform grayscale images into vibrant, colorized versions. We use supervised training with a curated dataset of human-centric images, focusing particularly on tan skin tone representation (TanVis dataset).
+The project utilizes advanced neural network techniques, specifically the **TanColorize** architecture (integrating **ConvNeXt-L**), to achieve high-fidelity colorization.
 
-The primary goals of this project are:
-- Enhance skin tone accuracy in grayscale-to-color transformations  
-- Minimize color bleeding and artifact generation  
-- Develop a robust and generalizable colorization model
+**Primary Goals:**
+* **Skin Tone Accuracy**: Enhance the representation of tan and dark skin tones in grayscale-to-color transformations.
+* **Artifact Reduction**: Minimize color bleeding and artificial generation during the process.
+* **Robustness**: Develop a generalizable model capable of handling diverse human-centric images.
 
 ---
 
 ## 🚀 Getting Started
 
-To run this application locally, you will need to set up both the Python backend and the React frontend.
+To run this application locally, you will need to set up the FastAPI backend and the React frontend.
 
 ### Prerequisites
 * **Python 3.9+**
-* **Node.js & npm** (Download from [nodejs.org](https://nodejs.org/))
+* **Node.js & npm**
+* **NVIDIA GPU** (RTX 3050 confirmed for training)
 
-### 1. Clone the Repository
+### 1. Installation & Setup
 
 ```bash
-git clone 
+# Clone the repository
+git clone <repository-url>
+cd TanColorize
 
-# Create and activate a virtual environment (optional but recommended)
+# Create and activate a virtual environment
 python -m venv venv
-
 # Windows:
 .\venv\Scripts\activate
 # Mac/Linux:
 source venv/bin/activate
 
-# Install dependencies (including FastAPI and Uvicorn)
+# Install dependencies
 pip install -r requirements.txt
-pip install fastapi uvicorn python-multipart opencv-python torch torchvision basicsr
+pip install fastapi uvicorn python-multipart opencv-python torch torchvision basicsr google-cloud-storage
 
-# Setup front end
+# Setup the frontend
 cd frontend
 npm install
-
-# Start the Backend Server
-uvicorn server:app --reload
-
-# Start the React Frontend
-cd frontend
-npm start

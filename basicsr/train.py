@@ -101,7 +101,6 @@ def train_pipeline(root_path):
     opt['root_path'] = root_path
 
     torch.backends.cudnn.benchmark = True
-    # torch.backends.cudnn.deterministic = True
 
     # load resume states if necessary
     resume_state = load_resume_state(opt)
@@ -114,8 +113,6 @@ def train_pipeline(root_path):
     # copy the yml file to the experiment root
     copy_opt_file(args.opt, opt['path']['experiments_root'])
 
-    # WARNING: should not use get_root_logger in the above codes, including the called functions
-    # Otherwise the logger will not be properly initialized
     log_file = osp.join(opt['path']['log'], f"train_{opt['name']}_{get_time_str()}.log")
     logger = get_root_logger(logger_name='basicsr', log_level=logging.INFO, log_file=log_file)
     logger.info(get_env_info())
@@ -130,7 +127,7 @@ def train_pipeline(root_path):
     # create model
     model = build_model(opt)
     if resume_state:  # resume training
-        model.resume_training(resume_state)  # handle optimizers and schedulers
+        model.resume_training(resume_state)
         logger.info(f"Resuming training from epoch: {resume_state['epoch']}, " f"iter: {resume_state['iter']}.")
         start_epoch = resume_state['epoch']
         current_iter = resume_state['iter']
@@ -176,8 +173,6 @@ def train_pipeline(root_path):
             model.optimize_parameters(current_iter)
             iter_timer.record()
             if current_iter == 1:
-                # reset start time in msg_logger for more accurate eta_time
-                # not work in resume mode
                 msg_logger.reset_start_time()
             # log
             if current_iter % opt['logger']['print_freq'] == 0:
@@ -187,11 +182,10 @@ def train_pipeline(root_path):
                 log_vars.update(model.get_current_log())
                 msg_logger(log_vars)
 
-            # save training images snapshot save_snapshot_freq
-            if opt['logger'][
-                    'save_snapshot_freq'] is not None and current_iter % opt['logger']['save_snapshot_freq'] == 0:
-                pass
-                # model.save_training_images(epoch, current_iter)
+            # save training images snapshot (Corrected implementation)
+            if opt['logger'].get('save_snapshot_freq') is not None and current_iter % opt['logger']['save_snapshot_freq'] == 0:
+                logger.info(f'Saving training images snapshot at iteration {current_iter}')
+                model.save_training_images(current_iter)
 
             # save models and training states
             if current_iter % opt['logger']['save_checkpoint_freq'] == 0:
@@ -211,7 +205,6 @@ def train_pipeline(root_path):
         # end of iter
 
     # end of epoch
-
     consumed_time = str(datetime.timedelta(seconds=int(time.time() - start_time)))
     logger.info(f'End of training. Time consumed: {consumed_time}')
     logger.info('Save the latest model.')
