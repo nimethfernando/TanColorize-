@@ -66,11 +66,11 @@ export default function ColorizeApp() {
     formData.append("file", selectedFile);
 
     if (currentUser) {
-          // Assuming Firebase auth is used, currentUser usually has a 'uid'
-          // If it doesn't, you can use currentUser.email as the identifier
-          const userId = currentUser.uid || currentUser.email; 
-          formData.append("user_id", userId);
-        }
+      // Assuming Firebase auth is used, currentUser usually has a 'uid'
+      // If it doesn't, you can use currentUser.email as the identifier
+      const userId = currentUser.uid || currentUser.email; 
+      formData.append("user_id", userId);
+    }
         
     try {
       const res = await axios.post(`${API_URL}/colorize-image`, formData);
@@ -131,7 +131,17 @@ export default function ColorizeApp() {
             {currentUser ? currentUser.email : 'Guest user'}
           </div>
           {currentUser ? (
-            <button onClick={handleLogout} className="logout-btn">Logout</button>
+            <>
+              {/* Added View History Button */}
+              <Link 
+                to="/history" 
+                className="action-btn" 
+                style={{display: 'block', textAlign: 'center', marginBottom: '10px', textDecoration: 'none'}}
+              >
+                View History
+              </Link>
+              <button onClick={handleLogout} className="logout-btn">Logout</button>
+            </>
           ) : (
             <div className="auth-actions">
               <Link to="/signin" className="logout-btn">Sign In</Link>

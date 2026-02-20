@@ -5,6 +5,7 @@ import ColorizeApp from './components/ColorizeApp';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import './App.css';
+import History from './components/History';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/history' element={<History />} />
           <Route path="/" element={<ColorizeApp />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
