@@ -35,3 +35,5 @@ meta_*.txt
 # Mac/OS specific
 .DS_Store
 Thumbs.db
+
+Dataset/

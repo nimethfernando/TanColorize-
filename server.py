@@ -14,9 +14,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google.cloud import storage
 import os
+import boto3
+import uuid
+from datetime import datetime
+from fastapi import Form
 
 # Import your architecture (Ensure you run this script from the project root)
 from basicsr.archs.tancolorize_arch import TanColorize
+
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
+S3_BUCKET_NAME = os.getenv("AWS_S3_BUCKET_NAME", "your-s3-bucket-name")
 
 app = FastAPI()
 
@@ -27,6 +36,14 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+#Initialize S3 Client
+s3_client = boto3.client(
+    's3',
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=AWS_REGION
 )
 
 # --- Utilities from your original app.py ---
@@ -231,6 +248,52 @@ def process_folder(config: FolderConfig):
             print(f"Skipped {img_path}: {e}")
             
     return {"status": "success", "processed_count": count, "output_folder": config.output_folder}
+
+@app.post("/colorize-image")
+async def colorize_image(file: UploadFile = File(...), user_id: str = Form(None)):
+    if colorizer.model is None:
+        raise HTTPException(status_code=400, detail="Model not loaded")
+    
+    try:
+        contents = await file.read()
+        nparr = np.frombuffer(contents, np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        
+        output_bgr = colorizer.colorize(img)
+        
+        # Encode back to png
+        success, encoded_img = cv2.imencode('.png', output_bgr)
+        image_bytes = encoded_img.tobytes()
+        
+        s3_url = None
+        # If user is signed in, upload to S3
+        if user_id:
+            try:
+                # Create a unique file path for the user in the S3 bucket
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                unique_id = uuid.uuid4().hex[:8]
+                s3_key = f"history/{user_id}/colorized_{timestamp}_{unique_id}.png"
+                
+                s3_client.put_object(
+                    Bucket=S3_BUCKET_NAME,
+                    Key=s3_key,
+                    Body=image_bytes,
+                    ContentType='image/png'
+                )
+                
+                # Construct the public S3 URL
+                s3_url = f"https://{S3_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/{s3_key}"
+                print(f"Successfully uploaded to S3: {s3_url}")
+            except Exception as s3_err:
+                print(f"Error uploading to S3: {s3_err}")
+                # You might not want to fail the whole request just because S3 failed
+        
+        return {
+            "image_data": image_bytes.hex(),
+            "s3_url": s3_url # Return S3 URL to frontend if needed
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

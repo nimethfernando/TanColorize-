@@ -65,6 +65,13 @@ export default function ColorizeApp() {
     const formData = new FormData();
     formData.append("file", selectedFile);
 
+    if (currentUser) {
+          // Assuming Firebase auth is used, currentUser usually has a 'uid'
+          // If it doesn't, you can use currentUser.email as the identifier
+          const userId = currentUser.uid || currentUser.email; 
+          formData.append("user_id", userId);
+        }
+        
     try {
       const res = await axios.post(`${API_URL}/colorize-image`, formData);
       // Convert hex string back to image for display
