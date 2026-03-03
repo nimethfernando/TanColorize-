@@ -8,7 +8,7 @@ const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 export default function History() {
   const { currentUser } = useAuth();
-  const [images, setImages] = useState([]);
+  const [historyItems, setHistoryItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,8 @@ export default function History() {
       try {
         const userId = currentUser.uid || currentUser.email;
         const res = await axios.get(`${API_URL}/history/${userId}`);
-        setImages(res.data.images || []);
+        // Read the "history" array from the updated backend
+        setHistoryItems(res.data.history || []);
       } catch (err) {
         console.error("Error fetching history:", err);
       } finally {
@@ -30,6 +31,26 @@ export default function History() {
 
     fetchHistory();
   }, [currentUser]);
+
+  // Helper function to force download instead of opening in a new tab
+  const handleDownload = async (url, filename) => {
+    try {
+      const response = await fetch(url);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error('Download failed. Ensure your S3 bucket has CORS configured.', error);
+      // Fallback: open in new tab
+      window.open(url, '_blank');
+    }
+  };
 
   if (!currentUser) {
     return (
@@ -52,19 +73,41 @@ export default function History() {
         
         {loading ? (
           <p>Loading your history...</p>
-        ) : images.length === 0 ? (
+        ) : historyItems.length === 0 ? (
           <p>No colorized images found in your history.</p>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginTop: '20px' }}>
-            {images.map((url, index) => (
-              <div key={index} className="img-box" style={{ padding: '10px' }}>
-                <a href={url} target="_blank" rel="noopener noreferrer">
-                  <img 
-                    src={url} 
-                    alt={`Colorized ${index}`} 
-                    style={{ width: '100%', borderRadius: '8px', cursor: 'pointer' }} 
-                  />
-                </a>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '30px' }}>
+            {historyItems.map((item, index) => (
+              <div key={index} style={{ 
+                display: 'flex', gap: '20px', backgroundColor: '#2d2d2d', padding: '20px', borderRadius: '10px' 
+              }}>
+                {/* Original Image Container */}
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ marginBottom: '10px' }}>Grayscale (Original)</h4>
+                  <div className="img-box" style={{ padding: '0', border: 'none' }}>
+                    <img src={item.original} alt={`Original ${index}`} style={{ width: '100%', borderRadius: '8px' }} />
+                  </div>
+                  <button 
+                    onClick={() => handleDownload(item.original, `original_${item.timestamp}.png`)} 
+                    className="action-btn" 
+                    style={{ marginTop: '15px', width: '100%' }}>
+                    Download Original
+                  </button>
+                </div>
+
+                {/* Colorized Image Container */}
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ marginBottom: '10px' }}>Colorized Result</h4>
+                  <div className="img-box" style={{ padding: '0', border: 'none' }}>
+                    <img src={item.colorized} alt={`Colorized ${index}`} style={{ width: '100%', borderRadius: '8px' }} />
+                  </div>
+                  <button 
+                    onClick={() => handleDownload(item.colorized, `colorized_${item.timestamp}.png`)} 
+                    className="action-btn" 
+                    style={{ marginTop: '15px', width: '100%', backgroundColor: '#4CAF50' }}>
+                    Download Colorized
+                  </button>
+                </div>
               </div>
             ))}
           </div>

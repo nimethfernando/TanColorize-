@@ -180,7 +180,7 @@ def load_model_endpoint(config: ModelConfig):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/colorize-image")
-async def colorize_image(file: UploadFile = File(...)):
+async def colorize_image(file: UploadFile = File(...), user_id: str = Form(None)):
     if colorizer.model is None:
         raise HTTPException(status_code=400, detail="Model not loaded")
     
@@ -191,35 +191,47 @@ async def colorize_image(file: UploadFile = File(...)):
         
         output_bgr = colorizer.colorize(img)
         
-        # Encode back to png to send to React
+        # Encode back to png
         success, encoded_img = cv2.imencode('.png', output_bgr)
-        return {"image_data": encoded_img.tobytes().hex()}
+        image_bytes = encoded_img.tobytes()
+        
+        s3_url = None
+        # If user is signed in, upload BOTH to S3
+        if user_id:
+            try:
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                unique_id = uuid.uuid4().hex[:8]
+                
+                # 1. Upload Original Image
+                orig_s3_key = f"history/{user_id}/{timestamp}_{unique_id}_original.png"
+                s3_client.put_object(
+                    Bucket=S3_BUCKET_NAME,
+                    Key=orig_s3_key,
+                    Body=contents, # The original raw bytes uploaded by the user
+                    ContentType=file.content_type or 'image/png'
+                )
+
+                # 2. Upload Colorized Image
+                col_s3_key = f"history/{user_id}/{timestamp}_{unique_id}_colorized.png"
+                s3_client.put_object(
+                    Bucket=S3_BUCKET_NAME,
+                    Key=col_s3_key,
+                    Body=image_bytes,
+                    ContentType='image/png'
+                )
+                
+                # Construct the public S3 URL
+                s3_url = f"https://{S3_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/{col_s3_key}"
+                print(f"Successfully uploaded to S3: {s3_url}")
+            except Exception as s3_err:
+                print(f"Error uploading to S3: {s3_err}")
+        
+        return {
+            "image_data": image_bytes.hex(),
+            "s3_url": s3_url 
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-# --- Updated Configuration ---
-BUCKET_NAME = "tancorize"  # Extracted from your link
-MODEL_BLOB_NAME = "np.pth" # Extracted from your link
-LOCAL_MODEL_PATH = "model.pth"
-
-# 1. Download from GCS on startup if it doesn't exist
-if not os.path.exists(LOCAL_MODEL_PATH):
-    try:
-        download_model_from_gcs(BUCKET_NAME, MODEL_BLOB_NAME, LOCAL_MODEL_PATH)
-    except Exception as e:
-        print(f"Error downloading from GCS: {e}")
-
-# 2. AUTOMATICALLY LOAD THE MODEL
-# This ensures colorizer.model is not None when the user uploads an image
-try:
-    if os.path.exists(LOCAL_MODEL_PATH):
-        # We use 512 as that is the default input_size in your ImageColorizer
-        load_msg = colorizer.load_model(LOCAL_MODEL_PATH, input_size=512)
-        print(f"Successfully auto-loaded: {load_msg}")
-    else:
-        print("Warning: model.pth not found. Automated colorization will fail until loaded.")
-except Exception as e:
-    print(f"Failed to initialize model on startup: {e}")
 
 @app.post("/process-folder")
 def process_folder(config: FolderConfig):
