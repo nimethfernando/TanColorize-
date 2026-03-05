@@ -13,11 +13,15 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google.cloud import storage
-import os
 import boto3
 import uuid
 from datetime import datetime
 from fastapi import Form
+from dotenv import load_dotenv
+
+# Load environment variables from a .env file (fixes "Unable to locate credentials" locally)
+load_dotenv()
+# print("DEBUG - Access Key loaded:", os.getenv("AWS_ACCESS_KEY_ID"))
 
 # Import your architecture (Ensure you run this script from the project root)
 from basicsr.archs.tancolorize_arch import TanColorize
@@ -261,50 +265,33 @@ def process_folder(config: FolderConfig):
             
     return {"status": "success", "processed_count": count, "output_folder": config.output_folder}
 
-@app.post("/colorize-image")
-async def colorize_image(file: UploadFile = File(...), user_id: str = Form(None)):
-    if colorizer.model is None:
-        raise HTTPException(status_code=400, detail="Model not loaded")
-    
+@app.get("/history/{user_id}")
+async def get_history(user_id: str):
+    """Fetches user colorization history from S3."""
     try:
-        contents = await file.read()
-        nparr = np.frombuffer(contents, np.uint8)
-        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        prefix = f"history/{user_id}/"
         
-        output_bgr = colorizer.colorize(img)
+        response = s3_client.list_objects_v2(
+            Bucket=S3_BUCKET_NAME,
+            Prefix=prefix
+        )
         
-        # Encode back to png
-        success, encoded_img = cv2.imencode('.png', output_bgr)
-        image_bytes = encoded_img.tobytes()
+        files = []
+        if 'Contents' in response:
+            for obj in response['Contents']:
+                file_url = f"https://{S3_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/{obj['Key']}"
+                files.append({
+                    "key": obj['Key'],
+                    "url": file_url,
+                    "last_modified": obj['LastModified']
+                })
         
-        s3_url = None
-        # If user is signed in, upload to S3
-        if user_id:
-            try:
-                # Create a unique file path for the user in the S3 bucket
-                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-                unique_id = uuid.uuid4().hex[:8]
-                s3_key = f"history/{user_id}/colorized_{timestamp}_{unique_id}.png"
-                
-                s3_client.put_object(
-                    Bucket=S3_BUCKET_NAME,
-                    Key=s3_key,
-                    Body=image_bytes,
-                    ContentType='image/png'
-                )
-                
-                # Construct the public S3 URL
-                s3_url = f"https://{S3_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/{s3_key}"
-                print(f"Successfully uploaded to S3: {s3_url}")
-            except Exception as s3_err:
-                print(f"Error uploading to S3: {s3_err}")
-                # You might not want to fail the whole request just because S3 failed
+        # Sort files by last modified date (newest first)
+        files.sort(key=lambda x: x['last_modified'], reverse=True)
         
-        return {
-            "image_data": image_bytes.hex(),
-            "s3_url": s3_url # Return S3 URL to frontend if needed
-        }
+        return {"history": files}
     except Exception as e:
+        print(f"Error fetching history from S3: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
