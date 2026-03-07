@@ -21,6 +21,7 @@ export default function ColorizeApp() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [originalPreview, setOriginalPreview] = useState(null);
   const [colorizedImage, setColorizedImage] = useState(null);
+  const [downloadFormat, setDownloadFormat] = useState("png"); // Added download format state
 
   // Folder State
   const [inputFolder, setInputFolder] = useState("");
@@ -66,8 +67,6 @@ export default function ColorizeApp() {
     formData.append("file", selectedFile);
 
     if (currentUser) {
-      // Assuming Firebase auth is used, currentUser usually has a 'uid'
-      // If it doesn't, you can use currentUser.email as the identifier
       const userId = currentUser.uid || currentUser.email; 
       formData.append("user_id", userId);
     }
@@ -122,6 +121,41 @@ export default function ColorizeApp() {
     }
   };
 
+  // Helper: Handle image download and format conversion
+  const handleDownload = () => {
+    if (!colorizedImage) return;
+
+    if (downloadFormat === 'png') {
+      // Direct download if PNG is selected
+      const link = document.createElement('a');
+      link.href = colorizedImage;
+      link.download = 'colorized.png';
+      link.click();
+    } else if (downloadFormat === 'jpeg') {
+      // Convert to JPG using canvas if JPG is selected
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        
+        // Fill with white background in case of transparency (JPG doesn't support transparency)
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.95); // 0.95 represents high quality
+        
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'colorized.jpg';
+        link.click();
+      };
+      img.src = colorizedImage;
+    }
+  };
+
   return (
     <div className="app-container">
       {/* Sidebar */}
@@ -132,7 +166,6 @@ export default function ColorizeApp() {
           </div>
           {currentUser ? (
             <>
-              {/* Added View History Button */}
               <Link 
                 to="/history" 
                 className="action-btn" 
@@ -229,10 +262,21 @@ export default function ColorizeApp() {
               </div>
             </div>
             
+            {/* Replaced <a> tag with new download container */}
             {colorizedImage && (
-              <a href={colorizedImage} download="colorized.png" className="download-btn">
-                Download Result
-              </a>
+              <div className="download-container" style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
+                <select 
+                  value={downloadFormat} 
+                  onChange={(e) => setDownloadFormat(e.target.value)}
+                  style={{ padding: '10px', borderRadius: '5px' }}
+                >
+                  <option value="png">PNG</option>
+                  <option value="jpeg">JPG</option>
+                </select>
+                <button onClick={handleDownload} className="download-btn">
+                  Download Result
+                </button>
+              </div>
             )}
           </div>
         ) : (
