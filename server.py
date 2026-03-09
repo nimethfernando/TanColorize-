@@ -19,9 +19,8 @@ from datetime import datetime
 from fastapi import Form
 from dotenv import load_dotenv
 
-# Load environment variables from a .env file (fixes "Unable to locate credentials" locally)
+# Load environment variables from a .env file
 load_dotenv()
-# print("DEBUG - Access Key loaded:", os.getenv("AWS_ACCESS_KEY_ID"))
 
 # Import your architecture (Ensure you run this script from the project root)
 from basicsr.archs.tancolorize_arch import TanColorize
@@ -42,15 +41,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-#Initialize S3 Client
+# Initialize S3 Client
 s3_client = boto3.client(
     's3',
     aws_access_key_id=AWS_ACCESS_KEY_ID,
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
     region_name=AWS_REGION
 )
-
-# --- Utilities from your original app.py ---
 
 def select_file_using_subprocess(is_folder=False):
     """Opens a native system dialog on the server machine to select files/folders."""
@@ -170,7 +167,6 @@ class FolderConfig(BaseModel):
 
 @app.get("/browse")
 def browse_path(type: str):
-    # Opens dialog on the server machine
     is_folder = (type == "folder")
     path = select_file_using_subprocess(is_folder)
     return {"path": path if path else ""}
@@ -211,7 +207,7 @@ async def colorize_image(file: UploadFile = File(...), user_id: str = Form(None)
                 s3_client.put_object(
                     Bucket=S3_BUCKET_NAME,
                     Key=orig_s3_key,
-                    Body=contents, # The original raw bytes uploaded by the user
+                    Body=contents,
                     ContentType=file.content_type or 'image/png'
                 )
 
@@ -267,7 +263,7 @@ def process_folder(config: FolderConfig):
 
 @app.get("/history/{user_id}")
 async def get_history(user_id: str):
-    """Fetches user colorization history from S3."""
+    """Fetches and groups user colorization history from S3 with Pre-signed URLs."""
     try:
         prefix = f"history/{user_id}/"
         
@@ -276,17 +272,43 @@ async def get_history(user_id: str):
             Prefix=prefix
         )
         
-        files = []
+        grouped_files = {}
         if 'Contents' in response:
             for obj in response['Contents']:
-                file_url = f"https://{S3_BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/{obj['Key']}"
-                files.append({
-                    "key": obj['Key'],
-                    "url": file_url,
-                    "last_modified": obj['LastModified']
-                })
-        
-        # Sort files by last modified date (newest first)
+                
+                # 1. EXTRACT FILENAME FIRST (Moved this up!)
+                filename = obj['Key'].split('/')[-1]
+
+                # 2. GENERATE PRE-SIGNED URL WITH CONTENT-DISPOSITION
+                file_url = s3_client.generate_presigned_url(
+                    'get_object',
+                    Params={
+                        'Bucket': S3_BUCKET_NAME,
+                        'Key': obj['Key'],
+                        'ResponseContentDisposition': f'attachment; filename="{filename}"' # <-- THIS FORCES THE DOWNLOAD
+                    },
+                    ExpiresIn=3600 # This link works for exactly 1 hour
+                )
+                
+                # Group files by their timestamp and unique ID
+                if "_original" in filename or "_colorized" in filename:
+                    base_id = filename.replace("_original.png", "").replace("_colorized.png", "")
+                    
+                    if base_id not in grouped_files:
+                        grouped_files[base_id] = {
+                            "timestamp": base_id,
+                            "original": None,
+                            "colorized": None,
+                            "last_modified": obj['LastModified']
+                        }
+                        
+                    if "_original" in filename:
+                        grouped_files[base_id]["original"] = file_url
+                    elif "_colorized" in filename:
+                        grouped_files[base_id]["colorized"] = file_url
+
+        # Convert the dictionary to a list and sort by newest first
+        files = list(grouped_files.values())
         files.sort(key=lambda x: x['last_modified'], reverse=True)
         
         return {"history": files}

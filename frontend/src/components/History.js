@@ -20,8 +20,13 @@ export default function History() {
       try {
         const userId = currentUser.uid || currentUser.email;
         const res = await axios.get(`${API_URL}/history/${userId}`);
-        // Read the "history" array from the updated backend
-        setHistoryItems(res.data.history || []);
+        
+        // Ensure we only set valid paired items
+        const validItems = (res.data.history || []).filter(
+          item => item.original && item.colorized
+        );
+        
+        setHistoryItems(validItems);
       } catch (err) {
         console.error("Error fetching history:", err);
       } finally {
