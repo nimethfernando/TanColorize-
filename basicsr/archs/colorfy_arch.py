@@ -1,16 +1,16 @@
 import torch
 import torch.nn as nn
 
-from basicsr.archs.tancolorize_arch_utils.unet import Hook, CustomPixelShuffle_ICNR,  UnetBlockWide, NormType, custom_conv_layer
-from basicsr.archs.tancolorize_arch_utils.convnext import ConvNeXt
-from basicsr.archs.tancolorize_arch_utils.transformer_utils import SelfAttentionLayer, CrossAttentionLayer, Transformer, FFNLayer, MLP
-from basicsr.archs.tancolorize_arch_utils.position_encoding import PositionEmbeddingSine
+from basicsr.archs.colorfy_arch_utils.unet import Hook, CustomPixelShuffle_ICNR,  UnetBlockWide, NormType, custom_conv_layer
+from basicsr.archs.colorfy_arch_utils.convnext import ConvNeXt
+from basicsr.archs.colorfy_arch_utils.transformer_utils import SelfAttentionLayer, CrossAttentionLayer, FFNLayer, MLP
+from basicsr.archs.colorfy_arch_utils.position_encoding import PositionEmbeddingSine
+from basicsr.archs.colorfy_arch_utils.transformer import Transformer
 from basicsr.utils.registry import ARCH_REGISTRY
 
 
-
 @ARCH_REGISTRY.register()
-class TanColorize(nn.Module):
+class Colorfy(nn.Module):
 
     def __init__(self,
                  encoder_name='convnext-l',

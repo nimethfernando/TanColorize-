@@ -1,24 +1,27 @@
-import cv2
 import numpy as np
+
+from basicsr.utils.matlab_functions import bgr2ycbcr
 
 
 def reorder_image(img, input_order='HWC'):
     """Reorder images to 'HWC' order.
 
-    If the input_order is (h, w, c), it is unchanged.
-    If the input_order is (c, h, w), it is transposed to (h, w, c).
+    If the input_order is (h, w), return (h, w, 1);
+    If the input_order is (c, h, w), return (h, w, c);
+    If the input_order is (h, w, c), return as it is.
 
     Args:
         img (ndarray): Input image.
         input_order (str): Whether the input order is 'HWC' or 'CHW'.
-            Default: 'HWC'.
+            If the input image shape is (h, w), input_order will not have
+            effects. Default: 'HWC'.
 
     Returns:
-        ndarray: Reordered image.
+        ndarray: reordered image.
     """
 
     if input_order not in ['HWC', 'CHW']:
-        raise ValueError(f'Wrong input_order {input_order}. Supported input_orders are ' '"HWC" and "CHW"')
+        raise ValueError(f'Wrong input_order {input_order}. Supported input_orders are ' "'HWC' and 'CHW'")
     if len(img.shape) == 2:
         img = img[..., None]
     if input_order == 'CHW':
@@ -37,6 +40,6 @@ def to_y_channel(img):
     """
     img = img.astype(np.float32) / 255.
     if img.ndim == 3 and img.shape[2] == 3:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2YCbCr)[:, :, 0:1]
-        img = img * 255.
-    return img
+        img = bgr2ycbcr(img, y_only=True)
+        img = img[..., None]
+    return img * 255.
