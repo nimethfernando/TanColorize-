@@ -1,250 +1,1001 @@
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4437.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4438.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4439.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4440.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4441.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4442.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4443.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4444.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4445.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4446.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4447.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4448.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4449.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4450.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4451.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4452.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4453.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4454.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4455.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4456.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4457.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4458.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4459.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4460.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4461.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4462.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4463.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4464.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4465.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4466.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4467.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4468.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4469.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4470.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4471.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4472.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4473.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4474.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4475.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4476.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4477.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4478.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4479.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4480.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4481.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4482.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4483.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4484.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4485.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4486.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4487.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4488.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4489.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4490.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4491.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4492.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4493.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4494.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4495.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4496.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4497.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4498.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4499.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4500.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4501.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4502.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4503.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4504.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4505.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4506.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4507.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4508.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4509.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4510.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4511.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4512.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4513.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4514.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4515.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4516.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4517.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4518.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4519.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4520.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4521.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4522.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4523.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4524.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4525.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4526.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4527.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4528.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4529.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4530.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4531.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4532.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4533.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4534.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4535.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4536.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4537.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4538.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4539.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4540.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4541.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4542.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4543.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4544.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4545.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4546.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4547.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4548.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4549.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4550.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4551.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4552.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4553.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4554.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4555.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4556.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4557.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4558.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4559.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4560.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4561.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4562.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4563.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4564.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4565.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4566.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4567.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4568.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4569.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4570.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4571.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4572.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4573.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4574.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4575.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4576.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4577.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4578.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4579.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4580.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4581.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4582.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4583.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4584.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4585.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4586.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4587.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4588.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4589.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4590.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4591.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4592.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4593.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4594.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4595.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4596.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4597.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4598.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4599.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4600.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4601.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4602.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4603.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4604.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4605.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4606.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4607.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4608.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4609.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4610.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4611.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4612.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4613.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4614.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4615.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4616.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4617.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4618.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4619.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4620.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4621.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4622.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4623.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4624.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4625.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4626.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4627.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4628.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4629.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4630.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4631.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4632.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4633.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4634.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4635.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4636.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4637.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4638.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4639.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4640.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4641.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4642.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4643.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4644.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4645.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4646.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4647.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4648.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4649.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4650.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4651.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4652.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4653.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4654.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4655.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4656.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4657.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4658.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4659.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4660.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4661.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4662.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4663.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4664.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4665.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4666.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4667.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4668.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4669.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4670.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4671.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4672.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4673.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4674.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4675.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4676.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4677.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4678.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4679.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4680.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4681.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4682.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4683.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4684.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4685.png
-C:\Users\oshen geenath\Desktop\code\colorfy\full_dataset\Validation\images\4686.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4000.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4001.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4002.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4003.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4004.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4005.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4006.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4007.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4008.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4009.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4010.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4011.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4012.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4013.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4014.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4015.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4016.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4017.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4018.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4019.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4020.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4021.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4022.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4023.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4024.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4025.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4026.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4027.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4028.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4029.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4030.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4031.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4032.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4033.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4034.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4035.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4036.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4037.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4038.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4039.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4040.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4041.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4042.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4043.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4044.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4045.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4046.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4047.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4048.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4049.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4050.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4051.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4052.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4053.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4054.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4055.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4056.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4057.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4058.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4059.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4060.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4061.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4062.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4063.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4064.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4065.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4066.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4067.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4068.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4069.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4070.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4071.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4072.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4073.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4074.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4075.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4076.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4077.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4078.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4079.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4080.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4081.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4082.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4083.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4084.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4085.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4086.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4087.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4088.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4089.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4090.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4091.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4092.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4093.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4094.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4095.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4096.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4097.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4098.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4099.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4100.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4101.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4102.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4103.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4104.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4105.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4106.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4107.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4108.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4109.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4110.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4111.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4112.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4113.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4114.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4115.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4116.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4117.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4118.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4119.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4120.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4121.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4122.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4123.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4124.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4125.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4126.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4127.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4128.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4129.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4130.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4131.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4132.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4133.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4134.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4135.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4136.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4137.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4138.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4139.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4140.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4141.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4142.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4143.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4144.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4145.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4146.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4147.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4148.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4149.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4150.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4151.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4152.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4153.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4154.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4155.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4156.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4157.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4158.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4159.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4160.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4161.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4162.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4163.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4164.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4165.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4166.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4167.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4168.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4169.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4170.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4171.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4172.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4173.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4174.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4175.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4176.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4177.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4178.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4179.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4180.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4181.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4182.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4183.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4184.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4185.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4186.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4187.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4188.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4189.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4190.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4191.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4192.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4193.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4194.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4195.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4196.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4197.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4198.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4199.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4200.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4201.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4202.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4203.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4204.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4205.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4206.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4207.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4208.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4209.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4210.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4211.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4212.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4213.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4214.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4215.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4216.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4217.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4218.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4219.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4220.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4221.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4222.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4223.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4224.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4225.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4226.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4227.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4228.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4229.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4230.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4231.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4232.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4233.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4234.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4235.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4236.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4237.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4238.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4239.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4240.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4241.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4242.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4243.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4244.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4245.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4246.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4247.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4248.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4249.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4250.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4251.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4252.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4253.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4254.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4255.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4256.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4257.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4258.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4259.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4260.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4261.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4262.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4263.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4264.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4265.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4266.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4267.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4268.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4269.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4270.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4271.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4272.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4273.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4274.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4275.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4276.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4277.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4278.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4279.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4280.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4281.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4282.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4283.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4284.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4285.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4286.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4287.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4288.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4289.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4290.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4291.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4292.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4293.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4294.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4295.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4296.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4297.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4298.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4299.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4300.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4301.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4302.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4303.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4304.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4305.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4306.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4307.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4308.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4309.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4310.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4311.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4312.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4313.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4314.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4315.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4316.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4317.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4318.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4319.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4320.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4321.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4322.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4323.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4324.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4325.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4326.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4327.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4328.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4329.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4330.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4331.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4332.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4333.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4334.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4335.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4336.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4337.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4338.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4339.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4340.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4341.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4342.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4343.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4344.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4345.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4346.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4347.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4348.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4349.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4350.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4351.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4352.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4353.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4354.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4355.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4356.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4357.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4358.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4359.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4360.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4361.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4362.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4363.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4364.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4365.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4366.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4367.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4368.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4369.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4370.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4371.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4372.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4373.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4374.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4375.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4376.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4377.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4378.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4379.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4380.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4381.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4382.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4383.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4384.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4385.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4386.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4387.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4388.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4389.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4390.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4391.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4392.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4393.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4394.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4395.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4396.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4397.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4398.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4399.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4400.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4401.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4402.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4403.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4404.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4405.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4406.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4407.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4408.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4409.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4410.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4411.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4412.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4413.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4414.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4415.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4416.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4417.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4418.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4419.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4420.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4421.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4422.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4423.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4424.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4425.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4426.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4427.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4428.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4429.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4430.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4431.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4432.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4433.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4434.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4435.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4436.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4437.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4438.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4439.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4440.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4441.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4442.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4443.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4444.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4445.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4446.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4447.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4448.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4449.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4450.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4451.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4452.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4453.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4454.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4455.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4456.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4457.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4458.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4459.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4460.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4461.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4462.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4463.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4464.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4465.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4466.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4467.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4468.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4469.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4470.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4471.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4472.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4473.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4474.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4475.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4476.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4477.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4478.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4479.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4480.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4481.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4482.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4483.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4484.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4485.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4486.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4487.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4488.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4489.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4490.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4491.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4492.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4493.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4494.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4495.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4496.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4497.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4498.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4499.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4500.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4501.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4502.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4503.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4504.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4505.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4506.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4507.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4508.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4509.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4510.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4511.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4512.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4513.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4514.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4515.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4516.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4517.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4518.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4519.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4520.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4521.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4522.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4523.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4524.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4525.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4526.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4527.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4528.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4529.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4530.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4531.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4532.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4533.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4534.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4535.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4536.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4537.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4538.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4539.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4540.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4541.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4542.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4543.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4544.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4545.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4546.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4547.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4548.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4549.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4550.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4551.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4552.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4553.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4554.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4555.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4556.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4557.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4558.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4559.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4560.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4561.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4562.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4563.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4564.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4565.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4566.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4567.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4568.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4569.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4570.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4571.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4572.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4573.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4574.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4575.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4576.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4577.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4578.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4579.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4580.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4581.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4582.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4583.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4584.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4585.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4586.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4587.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4588.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4589.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4590.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4591.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4592.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4593.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4594.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4595.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4596.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4597.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4598.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4599.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4600.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4601.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4602.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4603.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4604.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4605.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4606.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4607.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4608.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4609.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4610.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4611.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4612.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4613.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4614.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4615.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4616.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4617.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4618.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4619.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4620.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4621.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4622.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4623.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4624.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4625.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4626.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4627.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4628.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4629.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4630.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4631.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4632.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4633.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4634.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4635.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4636.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4637.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4638.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4639.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4640.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4641.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4642.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4643.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4644.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4645.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4646.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4647.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4648.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4649.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4650.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4651.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4652.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4653.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4654.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4655.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4656.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4657.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4658.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4659.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4660.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4661.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4662.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4663.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4664.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4665.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4666.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4667.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4668.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4669.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4670.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4671.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4672.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4673.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4674.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4675.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4676.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4677.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4678.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4679.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4680.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4681.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4682.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4683.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4684.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4685.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4686.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4687.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4688.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4689.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4690.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4691.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4692.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4693.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4694.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4695.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4696.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4697.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4698.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4699.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4700.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4701.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4702.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4703.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4704.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4705.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4706.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4707.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4708.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4709.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4710.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4711.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4712.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4713.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4714.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4715.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4716.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4717.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4718.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4719.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4720.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4721.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4722.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4723.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4724.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4725.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4726.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4727.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4728.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4729.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4730.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4731.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4732.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4733.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4734.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4735.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4736.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4737.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4738.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4739.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4740.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4741.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4742.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4743.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4744.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4745.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4746.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4747.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4748.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4749.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4750.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4751.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4752.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4753.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4754.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4755.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4756.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4757.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4758.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4759.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4760.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4761.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4762.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4763.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4764.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4765.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4766.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4767.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4768.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4769.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4770.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4771.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4772.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4773.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4774.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4775.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4776.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4777.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4778.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4779.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4780.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4781.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4782.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4783.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4784.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4785.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4786.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4787.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4788.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4789.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4790.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4791.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4792.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4793.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4794.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4795.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4796.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4797.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4798.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4799.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4800.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4801.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4802.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4803.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4804.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4805.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4806.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4807.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4808.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4809.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4810.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4811.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4812.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4813.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4814.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4815.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4816.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4817.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4818.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4819.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4820.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4821.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4822.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4823.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4824.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4825.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4826.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4827.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4828.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4829.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4830.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4831.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4832.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4833.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4834.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4835.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4836.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4837.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4838.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4839.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4840.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4841.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4842.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4843.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4844.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4845.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4846.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4847.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4848.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4849.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4850.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4851.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4852.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4853.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4854.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4855.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4856.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4857.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4858.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4859.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4860.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4861.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4862.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4863.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4864.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4865.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4866.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4867.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4868.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4869.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4870.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4871.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4872.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4873.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4874.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4875.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4876.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4877.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4878.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4879.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4880.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4881.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4882.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4883.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4884.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4885.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4886.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4887.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4888.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4889.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4890.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4891.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4892.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4893.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4894.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4895.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4896.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4897.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4898.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4899.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4900.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4901.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4902.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4903.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4904.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4905.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4906.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4907.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4908.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4909.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4910.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4911.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4912.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4913.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4914.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4915.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4916.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4917.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4918.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4919.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4920.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4921.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4922.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4923.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4924.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4925.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4926.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4927.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4928.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4929.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4930.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4931.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4932.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4933.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4934.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4935.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4936.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4937.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4938.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4939.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4940.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4941.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4942.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4943.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4944.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4945.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4946.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4947.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4948.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4949.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4950.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4951.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4952.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4953.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4954.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4955.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4956.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4957.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4958.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4959.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4960.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4961.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4962.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4963.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4964.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4965.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4966.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4967.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4968.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4969.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4970.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4971.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4972.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4973.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4974.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4975.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4976.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4977.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4978.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4979.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4980.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4981.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4982.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4983.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4984.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4985.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4986.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4987.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4988.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4989.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4990.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4991.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4992.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4993.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4994.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4995.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4996.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4997.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4998.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\4999.png
+C:\Users\nimet\Documents\IIT\L6\FYP\Dataset\Datase_Validation\5000.png

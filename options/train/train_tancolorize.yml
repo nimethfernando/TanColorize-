@@ -1,9 +1,10 @@
 # general settings
-name: TanColorize_FastSprint
+name: train_tancolorize_l
 model_type: ColorModel
 scale: 1
 num_gpu: 1
 manual_seed: 0
+queue_size: 64
 
 # dataset and data loader settings
 datasets:
@@ -11,122 +12,164 @@ datasets:
     name: CustomNet
     type: LabDataset
     dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/SkinTan"
-    meta_info_file: meta_train.txt
+    # Fixed to use relative paths with forward slashes
+    meta_info_file: ['basicsr/dataset_train.txt']
     phase: train
     io_backend:
       type: disk
-    gt_size: 128
-    batch_size_per_gpu: 32
-    num_worker_per_gpu: 8
-    use_shuffle: true
-    # Mandatory augmentation flags to fix KeyError
-    use_hflip: true
-    use_rot: false
-    do_cutmix: false
+
+    gt_size: 256
+
+    # augmentation config
+    use_hflip: True
+    use_rot: False
+
+    # cutmix / fmix
+    do_cutmix: False
     cutmix_p: 0.5
-    do_fmix: false
+    do_fmix: False
     fmix_p: 0.5
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 1
+    batch_size_per_gpu: 4
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
 
   val:
     name: CustomNet
     type: LabDataset
     dataroot_gt: "C:/Users/nimet/Documents/IIT/L6/FYP/Dataset/Datase_Validation"
-    meta_info_file: meta_val.txt
+    # Fixed to use relative paths with forward slashes
+    meta_info_file: ['basicsr/dataset_validation.txt']
     phase: val
+    gt_size: 256
     io_backend:
       type: disk
-    gt_size: 128 
-    batch_size_per_gpu: 8
-    use_shuffle: false
-    # Mandatory augmentation flags to fix KeyError
-    use_hflip: false
-    use_rot: false
-    do_cutmix: false
+
+    # Add these parameters for validation dataset
+    use_hflip: False
+    use_rot: False
+    do_cutmix: False
     cutmix_p: 0.5
-    do_fmix: false
+    do_fmix: False
     fmix_p: 0.5
+
+    # data loader
+    use_shuffle: false
+    num_worker_per_gpu: 1
+    batch_size_per_gpu: 1
+    prefetch_mode: ~
 
 # network structures
 network_g:
+  # Changed from Colorfy to TanColorize based on your earlier project rename
   type: TanColorize
-  encoder_name: convnext-t 
+  encoder_name: convnext-l
   encoder_from_pretrain: True
-  num_queries: 32
+  decoder_name: MultiScaleColorDecoder
+  num_queries: 100
   num_scales: 3
-  dec_layers: 2
+  dec_layers: 9
   last_norm: Spectral
   num_output_channels: 2
-  decoder_name: MultiScaleColorDecoder
-  do_normalize: false
+  do_normalize: False
 
 network_d:
   type: DynamicUNetDiscriminator
-  nf: 16
+  nf: 64
   n_channels: 3
 
 # path
 path:
+  # NOTE: I changed this to ~ (null). 
+  # If you HAVE the pretrained model downloaded, change this to the correct path on YOUR computer, using forward slashes (e.g. "C:/Users/nimet/models/ddcolor_paper.pth")
   pretrain_network_g: ~
-  strict_load_g: false
+  strict_load_g: False
   resume_state: ~
 
 # training settings
 train:
-  use_amp: true
-  color_enhance: false
+  color_enhance: True
+  color_enhance_factor: 1.2
   optim_g:
     type: AdamW
-    lr: !!float 4e-4
+    lr: !!float 1e-5
     weight_decay: 0.01
     betas: [0.9, 0.99]
   optim_d:
     type: Adam
-    lr: !!float 4e-4
+    lr: !!float 1e-5
     weight_decay: 0
     betas: [0.9, 0.99]
 
-  total_iter: 10000
-  warmup_iter: -1
   scheduler:
     type: MultiStepLR
-    milestones: [3000, 5000]
+    milestones: [80000, 120000, 160000, 200000, 240000, 280000, 320000, 360000]
     gamma: 0.5
 
-  # Speed-optimized Losses
+  total_iter: 10000
+  #40000
+  warmup_iter: -1 # no warm up
+
+  # losses
   pixel_opt:
     type: L1Loss
-    loss_weight: 1.0
+    loss_weight: 0.1
     reduction: mean
   perceptual_opt:
     type: PerceptualLoss
     layer_weights:
-      "conv5_4": 1.0
-    vgg_type: vgg19
+      "conv1_1": 0.0625
+      "conv2_1": 0.125
+      "conv3_1": 0.25
+      "conv4_1": 0.5
+      "conv5_1": 1.0
+    vgg_type: vgg16_bn
     use_input_norm: true
     range_norm: false
-    perceptual_weight: 1.0
-    style_weight: 1.0
+    perceptual_weight: 5.0
+    style_weight: 0
     criterion: l1
   gan_opt:
     type: GANLoss
     gan_type: vanilla
     real_label_val: 1.0
     fake_label_val: 0.0
-    loss_weight: 0.05
+    loss_weight: 1.0
+  colorfulness_opt:
+    type: ColorfulnessLoss
+    loss_weight: 0.5
 
 # validation settings
 val:
-  val_freq: 5000
-  save_img: true
-  pbar: true
+  val_freq: !!float 1e4
+  save_img: False
+  pbar: True
+
   metrics:
-    # fid:
-    #   type: calculate_fid
-    #   better: lower
+    fid: # metric name, can be arbitrary
+      type: calculate_fid
+      better: lower
+    cf:
+      type: calculate_cf
+      better: higher
 
 # logging settings
 logger:
   print_freq: 100
-  save_checkpoint_freq: 500
+  save_snapshot_freq: !!float 1e3
+  save_snapshot_verbose: True
+  save_checkpoint_freq: !!float 1e4
   use_tb_logger: true
-  save_snapshot_freq: 1000
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
+
+find_unused_parameters: true

@@ -3,7 +3,7 @@ import torch.nn as nn
 from torchvision import models
 import numpy as np
 
-from basicsr.archs.colorfy_arch_utils.unet import _conv
+from basicsr.archs.tancolorize_arch_utils.unet import _conv
 from basicsr.utils.registry import ARCH_REGISTRY
 
 
