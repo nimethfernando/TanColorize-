@@ -7,16 +7,16 @@ import numpy as np
 import tempfile
 import subprocess
 import uvicorn
+import base64
 from PIL import Image
 from io import BytesIO
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google.cloud import storage
 import boto3
 import uuid
 from datetime import datetime
-from fastapi import Form
 from dotenv import load_dotenv
 
 # Load environment variables from a .env file
@@ -155,6 +155,12 @@ class ImageColorizer:
 # Initialize Global Colorizer
 colorizer = ImageColorizer()
 
+# --- Auto-load for Vertex AI ---
+VERTEX_MODEL_PATH = os.getenv("VERTEX_MODEL_PATH")
+if VERTEX_MODEL_PATH and os.path.exists(VERTEX_MODEL_PATH):
+    print(f"Vertex AI Mode: Auto-loading model from {VERTEX_MODEL_PATH}")
+    colorizer.load_model(VERTEX_MODEL_PATH, input_size=512)
+
 # --- API Endpoints ---
 
 class ModelConfig(BaseModel):
@@ -276,7 +282,7 @@ async def get_history(user_id: str):
         if 'Contents' in response:
             for obj in response['Contents']:
                 
-                # 1. EXTRACT FILENAME FIRST (Moved this up!)
+                # 1. EXTRACT FILENAME FIRST
                 filename = obj['Key'].split('/')[-1]
 
                 # 2. GENERATE PRE-SIGNED URL WITH CONTENT-DISPOSITION
@@ -285,7 +291,7 @@ async def get_history(user_id: str):
                     Params={
                         'Bucket': S3_BUCKET_NAME,
                         'Key': obj['Key'],
-                        'ResponseContentDisposition': f'attachment; filename="{filename}"' # <-- THIS FORCES THE DOWNLOAD
+                        'ResponseContentDisposition': f'attachment; filename="{filename}"' 
                     },
                     ExpiresIn=3600 # This link works for exactly 1 hour
                 )
@@ -316,5 +322,47 @@ async def get_history(user_id: str):
         print(f"Error fetching history from S3: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+# --- Vertex AI Endpoints ---
+
+@app.get("/health")
+def health_check():
+    """Vertex AI health check endpoint."""
+    return {"status": "healthy"}
+
+@app.post("/predict")
+async def predict(request: Request):
+    """Vertex AI prediction endpoint."""
+    if colorizer.model is None:
+        raise HTTPException(status_code=400, detail="Model not loaded.")
+
+    try:
+        body = await request.json()
+        instances = body.get("instances", [])
+        
+        predictions = []
+        for instance in instances:
+            # Vertex AI typically sends images as base64 encoded strings
+            image_b64 = instance.get("image_bytes")
+            if not image_b64:
+                continue
+                
+            image_data = base64.b64decode(image_b64)
+            nparr = np.frombuffer(image_data, np.uint8)
+            img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+            
+            # Run inference
+            output_bgr = colorizer.colorize(img)
+            
+            # Encode result back to base64
+            success, encoded_img = cv2.imencode('.png', output_bgr)
+            result_b64 = base64.b64encode(encoded_img.tobytes()).decode('utf-8')
+            predictions.append({"colorized_image": result_b64})
+            
+        return {"predictions": predictions}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Use AIP_HTTP_PORT for Vertex AI, default to 8000 for local development
+    port = int(os.environ.get("AIP_HTTP_PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
