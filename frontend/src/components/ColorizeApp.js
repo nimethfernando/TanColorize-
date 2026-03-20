@@ -4,102 +4,43 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import '../App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
 
 export default function ColorizeApp() {
   const { currentUser, logout } = useAuth();
-  
-  // State
-  const [modelPath, setModelPath] = useState("");
-  const [inputSize, setInputSize] = useState(512);
-  const [modelLoaded, setModelLoaded] = useState(false);
-  const [mode, setMode] = useState("single"); // 'single' or 'folder'
-  const [loading, setLoading] = useState(false);
-  const [statusMsg, setStatusMsg] = useState("");
 
-  // Single Image State
+  const [loading, setLoading] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [originalPreview, setOriginalPreview] = useState(null);
   const [colorizedImage, setColorizedImage] = useState(null);
-  const [downloadFormat, setDownloadFormat] = useState("png"); // Added download format state
-
-  // Folder State
-  const [inputFolder, setInputFolder] = useState("");
-  const [outputFolder, setOutputFolder] = useState("");
-
-  // Helper: Open File Dialog on Server
-  const handleBrowse = async (type, setter) => {
-    try {
-      const res = await axios.get(`${API_URL}/browse?type=${type}`);
-      if (res.data.path) setter(res.data.path);
-    } catch (err) {
-      console.error(err);
-      alert("Error opening file dialog");
-    }
-  };
-
-  // Helper: Load Model
-  const loadModel = async () => {
-    if (!modelPath) return alert("Please select a model file first");
-    setLoading(true);
-    setStatusMsg("Loading model...");
-    try {
-      const res = await axios.post(`${API_URL}/load-model`, {
-        path: modelPath,
-        input_size: inputSize
-      });
-      setModelLoaded(true);
-      setStatusMsg(res.data.message);
-    } catch (err) {
-      setStatusMsg("Error loading model: " + err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [downloadFormat, setDownloadFormat] = useState("png");
+  const [statusMsg, setStatusMsg] = useState("");
 
   // Helper: Process Single Image
   const processSingleImage = async () => {
-    if (!selectedFile) return;
-    if (!modelLoaded) return alert("Load model first!");
-    
+    if (!selectedFile) return alert("Please select an image first");
+
     setLoading(true);
+    setStatusMsg("Colorizing...");
+    setColorizedImage(null);
+
     const formData = new FormData();
     formData.append("file", selectedFile);
 
     if (currentUser) {
-      const userId = currentUser.uid || currentUser.email; 
+      const userId = currentUser.uid || currentUser.email;
       formData.append("user_id", userId);
     }
-        
+
     try {
       const res = await axios.post(`${API_URL}/colorize-image`, formData);
-      // Convert hex string back to image for display
       const hex = res.data.image_data;
       const bytes = new Uint8Array(hex.match(/.{1,2}/g).map(byte => parseInt(byte, 16)));
       const blob = new Blob([bytes], { type: "image/png" });
       setColorizedImage(URL.createObjectURL(blob));
+      setStatusMsg("Done!");
     } catch (err) {
-      alert("Error processing image");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Helper: Process Folder
-  const processFolder = async () => {
-    if (!inputFolder || !outputFolder) return alert("Select both folders");
-    if (!modelLoaded) return alert("Load model first!");
-
-    setLoading(true);
-    setStatusMsg("Processing folder... check console/server logs for details.");
-    try {
-      const res = await axios.post(`${API_URL}/process-folder`, {
-        input_folder: inputFolder,
-        output_folder: outputFolder
-      });
-      setStatusMsg(`Success! Processed ${res.data.processed_count} images to ${res.data.output_folder}`);
-    } catch (err) {
-      setStatusMsg("Error processing folder");
+      setStatusMsg("Error processing image: " + (err.response?.data?.detail || err.message));
     } finally {
       setLoading(false);
     }
@@ -111,6 +52,7 @@ export default function ColorizeApp() {
     setSelectedFile(file);
     setOriginalPreview(URL.createObjectURL(file));
     setColorizedImage(null);
+    setStatusMsg("");
   };
 
   const handleLogout = async () => {
@@ -121,32 +63,26 @@ export default function ColorizeApp() {
     }
   };
 
-  // Helper: Handle image download and format conversion
+  // Helper: Handle image download
   const handleDownload = () => {
     if (!colorizedImage) return;
 
     if (downloadFormat === 'png') {
-      // Direct download if PNG is selected
       const link = document.createElement('a');
       link.href = colorizedImage;
       link.download = 'colorized.png';
       link.click();
     } else if (downloadFormat === 'jpeg') {
-      // Convert to JPG using canvas if JPG is selected
       const img = new Image();
       img.onload = () => {
         const canvas = document.createElement('canvas');
         canvas.width = img.width;
         canvas.height = img.height;
         const ctx = canvas.getContext('2d');
-        
-        // Fill with white background in case of transparency (JPG doesn't support transparency)
         ctx.fillStyle = '#FFFFFF';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0);
-        
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.95); // 0.95 represents high quality
-        
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
         const link = document.createElement('a');
         link.href = dataUrl;
         link.download = 'colorized.jpg';
@@ -166,10 +102,10 @@ export default function ColorizeApp() {
           </div>
           {currentUser ? (
             <>
-              <Link 
-                to="/history" 
-                className="action-btn" 
-                style={{display: 'block', textAlign: 'center', marginBottom: '10px', textDecoration: 'none'}}
+              <Link
+                to="/history"
+                className="action-btn"
+                style={{ display: 'block', textAlign: 'center', marginBottom: '10px', textDecoration: 'none' }}
               >
                 View History
               </Link>
@@ -182,130 +118,65 @@ export default function ColorizeApp() {
             </div>
           )}
         </div>
-        
-        <h2>Model Settings</h2>
-        
-        <div className="control-group">
-          <label>Model Path</label>
-          <div className="file-input-group">
-            <input type="text" value={modelPath} readOnly placeholder="Select .pth file" />
-            <button onClick={() => handleBrowse('file', setModelPath)}>Browse</button>
-          </div>
-        </div>
 
-        <div className="control-group">
-          <label>Input Size: {inputSize}</label>
-          <input 
-            type="range" min="256" max="1024" step="64" 
-            value={inputSize} 
-            onChange={(e) => setInputSize(parseInt(e.target.value))} 
-          />
-        </div>
+        <h2>TanColorize</h2>
+        <p style={{ fontSize: '13px', color: '#aaa', marginTop: '8px' }}>
+          AI-powered image colorization with accurate skin tone reproduction.
+          Upload a grayscale image and click Colorize.
+        </p>
 
-        <button 
-          className="primary-btn" 
-          onClick={loadModel} 
-          disabled={loading || !modelPath}
-        >
-          {loading ? "Loading..." : "Load Model"}
-        </button>
-        
         <p className="status-text">{statusMsg}</p>
-
-        <hr />
-        <h3>Mode</h3>
-        <div className="radio-group">
-          <label>
-            <input 
-              type="radio" checked={mode === 'single'} 
-              onChange={() => setMode('single')} 
-            /> Single Image
-          </label>
-          <label>
-            <input 
-              type="radio" checked={mode === 'folder'} 
-              onChange={() => setMode('folder')} 
-            /> Folder Process
-          </label>
-        </div>
       </div>
 
       {/* Main Content */}
       <div className="main-content">
-        <h1>🎨 Tancolorize</h1>
-        
-        {mode === 'single' ? (
-          <div className="single-mode">
-            <div className="upload-section">
-              <input type="file" onChange={onFileChange} accept="image/*" />
-              <button 
-                className="action-btn"
-                onClick={processSingleImage} 
-                disabled={!selectedFile || !modelLoaded || loading}
-              >
-                {loading ? "Processing..." : "Colorize Image"}
-              </button>
-            </div>
+        <h1>🎨 TanColorize</h1>
 
-            <div className="image-preview-container">
-              <div className="img-box">
-                <h4>Original</h4>
-                {originalPreview && <img src={originalPreview} alt="Original" />}
-              </div>
-              <div className="img-box">
-                <h4>Colorized</h4>
-                {colorizedImage ? (
-                  <img src={colorizedImage} alt="Result" />
-                ) : (
-                  <div className="placeholder">Result will appear here</div>
-                )}
-              </div>
-            </div>
-            
-            {/* Replaced <a> tag with new download container */}
-            {colorizedImage && (
-              <div className="download-container" style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
-                <select 
-                  value={downloadFormat} 
-                  onChange={(e) => setDownloadFormat(e.target.value)}
-                  style={{ padding: '10px', borderRadius: '5px' }}
-                >
-                  <option value="png">PNG</option>
-                  <option value="jpeg">JPG</option>
-                </select>
-                <button onClick={handleDownload} className="download-btn">
-                  Download Result
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          <div className="folder-mode">
-            <div className="control-group">
-              <label>Input Folder</label>
-              <div className="file-input-group">
-                <input type="text" value={inputFolder} readOnly />
-                <button onClick={() => handleBrowse('folder', setInputFolder)}>Select Input</button>
-              </div>
-            </div>
-            
-            <div className="control-group">
-              <label>Output Folder</label>
-              <div className="file-input-group">
-                <input type="text" value={outputFolder} readOnly />
-                <button onClick={() => handleBrowse('folder', setOutputFolder)}>Select Output</button>
-              </div>
-            </div>
-
-            <button 
+        <div className="single-mode">
+          <div className="upload-section">
+            <input type="file" onChange={onFileChange} accept="image/*" />
+            <button
               className="action-btn"
-              onClick={processFolder}
-              disabled={!inputFolder || !outputFolder || !modelLoaded || loading}
+              onClick={processSingleImage}
+              disabled={!selectedFile || loading}
             >
-              {loading ? "Processing..." : "Process All Images"}
+              {loading ? "Colorizing..." : "Colorize Image"}
             </button>
           </div>
-        )}
+
+          <div className="image-preview-container">
+            <div className="img-box">
+              <h4>Original</h4>
+              {originalPreview
+                ? <img src={originalPreview} alt="Original" />
+                : <div className="placeholder">Upload an image</div>
+              }
+            </div>
+            <div className="img-box">
+              <h4>Colorized</h4>
+              {colorizedImage
+                ? <img src={colorizedImage} alt="Result" />
+                : <div className="placeholder">Result will appear here</div>
+              }
+            </div>
+          </div>
+
+          {colorizedImage && (
+            <div className="download-container" style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
+              <select
+                value={downloadFormat}
+                onChange={(e) => setDownloadFormat(e.target.value)}
+                style={{ padding: '10px', borderRadius: '5px' }}
+              >
+                <option value="png">PNG</option>
+                <option value="jpeg">JPG</option>
+              </select>
+              <button onClick={handleDownload} className="download-btn">
+                Download Result
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
