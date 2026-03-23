@@ -121,7 +121,7 @@ colorizer = ImageColorizer()
 # -------------------------------------------------------
 MODEL_PATH = os.getenv(
     "VERTEX_MODEL_PATH",
-    "/app/experiments/train_tancolorize_l/models/net_g_latest.pth"
+    "/app/experiments/train_tancolorize_l/models/np.pth"
 )
 
 @app.on_event("startup")
