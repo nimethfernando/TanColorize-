@@ -47,7 +47,7 @@ jobs:
         
         # --- ADDED THIS SECTION BELOW ---
         env:
-          REACT_APP_API_URL: http://tancolorizenimeth.eastus.azurecontainer.io:8080
+          REACT_APP_API_URL: https://tancolorize-api-secure.internal.kindriver-369f34e0.westus2.azurecontainerapps.io
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
