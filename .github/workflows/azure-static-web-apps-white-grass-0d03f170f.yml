@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
-       id-token: write
-       contents: read
+        id-token: write
+        contents: read
     steps:
       - uses: actions/checkout@v3
         with:
@@ -38,13 +38,16 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WHITE_GRASS_0D03F170F }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "./frontend" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "build" # Built app content directory - optional
+          ###### Repository/Build Configurations ######
+          app_location: "./frontend" 
+          api_location: "" 
+          output_location: "build" 
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
+        
+        # --- ADDED THIS SECTION BELOW ---
+        env:
+          REACT_APP_API_URL: http://tancolorizenimeth.eastus.azurecontainer.io:8080
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -55,4 +58,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WHITE_GRASS_0D03F170F }}
           action: "close"
