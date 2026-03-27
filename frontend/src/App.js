@@ -6,6 +6,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import './App.css';
 import History from './components/History';
+import ForgotPassword from './components/ForgotPassword';   
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Routes>
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path='/history' element={<History />} />
+          <Route path="/history" element={<History />} />
+          {/* ADDED THE FORGOT PASSWORD ROUTE HERE */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/" element={<ColorizeApp />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

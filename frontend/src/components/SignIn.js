@@ -96,6 +96,12 @@ export default function SignIn() {
                 {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
               </button>
             </div>
+            {/* HERE IS THE NEW FORGOT PASSWORD LINK */}
+            <div style={{ textAlign: 'right', marginTop: '8px' }}>
+              <Link to="/forgot-password" style={{ fontSize: '0.9em', color: '#0066cc', textDecoration: 'none' }}>
+                Forgot password?
+              </Link>
+            </div>
           </div>
           <button type="submit" disabled={loading} className="auth-button">
             {loading ? 'Signing In...' : 'Sign In'}

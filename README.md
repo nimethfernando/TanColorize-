@@ -32,7 +32,7 @@ cd TanColorize
 # Create and activate a virtual environment
 python -m venv venv
 # Windows:
-.\venv\Scripts\activate
+.\.venv\Scripts\activate
 # Mac/Linux:
 source venv/bin/activate
 

@@ -4,8 +4,6 @@ opencv-python-headless
 Pillow
 python-dotenv
 boto3
-google-cloud-storage
-google-cloud-aiplatform
 python-multipart
 numpy<2
 timm
@@ -13,9 +11,6 @@ einops
 scipy
 scikit-image
 matplotlib
-tqdm
 pyyaml
 addict
-yapf
-tb-nightly
 lmdb
