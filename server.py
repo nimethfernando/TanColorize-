@@ -13,7 +13,6 @@ from io import BytesIO
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from google.cloud import storage
 import boto3
 import uuid
 from datetime import datetime
@@ -116,13 +115,19 @@ class ImageColorizer:
 colorizer = ImageColorizer()
 
 # -------------------------------------------------------
-# AUTO-LOAD MODEL AT STARTUP (Production Mode)
-# Path: experiments/train_tancolorize_l/models/net_g_latest.pth
+# AUTO-LOAD MODEL AT STARTUP (Production & Localhost)
 # -------------------------------------------------------
-MODEL_PATH = os.getenv(
-    "VERTEX_MODEL_PATH",
-    "/app/experiments/train_tancolorize_l/models/np.pth"
-)
+_env_path = os.getenv("VERTEX_MODEL_PATH")
+_docker_path = "/app/experiments/train_tancolorize_l/models/np.pth"
+_local_path = "experiments/train_tancolorize_l/models/np.pth"
+
+# Smart path resolution
+if _env_path and os.path.exists(_env_path):
+    MODEL_PATH = _env_path
+elif os.path.exists(_docker_path):
+    MODEL_PATH = _docker_path
+else:
+    MODEL_PATH = _local_path
 
 @app.on_event("startup")
 async def startup_event():

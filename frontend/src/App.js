@@ -16,7 +16,6 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/history" element={<History />} />
-          {/* ADDED THE FORGOT PASSWORD ROUTE HERE */}
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/" element={<ColorizeApp />} />
           <Route path="*" element={<Navigate to="/" />} />
